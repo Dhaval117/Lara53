@@ -15,7 +15,7 @@ Auth::routes();
 Route::get('/', 'PageController@home');
 Route::get('/home', 'PageController@home');
 Route::get('/about', 'PageController@about');
-Route::get('/menu', 'PageController@menu3');
+Route::get('/menu', 'PageController@menu2');
 Route::get('/contact', 'PageController@contact');
 Route::get('/checkout','PageController@checkout');
 Route::get('/cart-add/{id}','PageController@cart_add');

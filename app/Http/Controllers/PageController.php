@@ -31,9 +31,9 @@ class PageController extends Controller
         return view('admin.base');
     }
 
-    public function menu3(){
+    public function menu2(){
         $items = DB::select('select * from items'); 
-        return view('user.menu3',['items'=>$items]);
+        return view('user.menu2',['items'=>$items]);
     }
 
     public function checkout(){
