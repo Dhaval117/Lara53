@@ -16,7 +16,8 @@ class PageController extends Controller
     }
 
     public function menu(){
-    	return view('user.menu');
+        $items = DB::select('select * from items'); 
+        return view('user.menu',['items'=>$items]);
     }
 
     public function contact(){
@@ -40,11 +41,15 @@ class PageController extends Controller
         return view('user.checkout');
     }
 
-    public function cart_add($id){
+  /*  public function cart_add($id){
        $item = DB::select('select * from items where Item_ID = ?',[$id]);
        $name = $item[0]->Item_Name;
        $price = $item[0]->Item_Price;
        $quantity = 1;
        DB::insert('insert into carts (Item_Name,Item_Price,Item_Quantity) values(?,?,?)',[$name,$price,$quantity]);
+    } */
+
+    public function cart_add(){
+        return view('abc');
     }
 }

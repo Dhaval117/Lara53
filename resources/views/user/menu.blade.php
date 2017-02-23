@@ -8,94 +8,42 @@ Menu
 <div class="menu">
 		<div class="container">
 			<h3>Menu</h3>
-			<p class="nihil">Nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur</p>
+			<p class="nihil">Our Items</p>
+			<?php $count=0; $counter=-1; ?>
+			
+			@foreach($items as $item)
+			<?php $count++; $counter++; ?>
 			<div class="menu-grids">
 				<div class="col-md-4 menu-grid">
 					<div class="menu-grd">
-						<img src="images/14.jpg" alt=" " class="img-responsive" />
-						<h4>dolorem eum fugiat</h4>
-						<p>Duis aute irure dolor in reprehenderit in voluptate velit esse 
-							cillum dolore eu fugiat nulla pariatur.</p>
+						<img src="<?php echo'images/'.$item->Item_Name.'.jpg' ?>" alt=" {{$item->Item_Name}}" class="img-responsive set-img" />
+						<h4>{{$item->Item_Name}}</h4>
+						<p>{{$item->Item_Description}}</p>
 						<div class="menu-grd-pos">
-							<p>$15</p>
+							<p>{{$item->Item_Price}}</p>
+						</div>
+						<div class="row">
+						<div class="col-xs-3">
+						<button class="btn btn-success" onclick="Cart::add(['id' => '{{$item->Item_ID}}', 'name' => '{{$item->Item_Name}}', 'qty' => 1, 'price' => {{$item->Item_Price}},])">Add</button>
+						</div>
+						<div class="col-xs-2"></div>
+						<div class="col-xs-7">
+							<input class="qty" style="display:none ; width:50px"  type="number" min="0" value="1" max="{{$item->Availability}}">
+						</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-4 menu-grid">
-					<div class="menu-grd">
-						<img src="images/11.jpg" alt=" " class="img-responsive" />
-						<h4>dolorem eum fugiat</h4>
-						<p>Duis aute irure dolor in reprehenderit in voluptate velit esse 
-							cillum dolore eu fugiat nulla pariatur.</p>
-						<div class="menu-grd-pos">
-							<p>$15</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 menu-grid">
-					<div class="menu-grd">
-						<img src="images/10.jpg" alt=" " class="img-responsive" />
-						<h4>dolorem eum fugiat</h4>
-						<p>Duis aute irure dolor in reprehenderit in voluptate velit esse 
-							cillum dolore eu fugiat nulla pariatur.</p>
-						<div class="menu-grd-pos">
-							<p>$15</p>
-						</div>
-					</div>
-				</div>
-				<div class="clearfix"> </div>
+			<?php 
+				if($count>2){
+					$count = 0;
+					echo '<div class="clearfix"> </div>';
+				}
+			?>
 			</div>
-			<div class="dinner">
-				<div class="dinner-info">
-					<h3>Dessert Special</h3>
-					<div class="dinner-info-grid">
-						<h4>dolor in reprehenderit voluptate</h4>
-						<p>Lorem Ipsum passages, and more recently with 
-							desktop publishing software like Aldus.<span>$45</span></p>
-					</div>
-					<div class="dinner-info-grid">
-						<h4>dolor in reprehenderit voluptate</h4>
-						<p>Lorem Ipsum passages, and more recently with 
-							desktop publishing software like Aldus.<span>$45</span></p>
-					</div>
-				</div>
-			</div>
-			<div class="menu-grids">
-				<div class="col-md-4 menu-grid">
-					<div class="menu-grd">
-						<img src="images/16.jpg" alt=" " class="img-responsive" />
-						<h4>dolorem eum fugiat</h4>
-						<p>Duis aute irure dolor in reprehenderit in voluptate velit esse 
-							cillum dolore eu fugiat nulla pariatur.</p>
-						<div class="menu-grd-pos">
-							<p>$15</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 menu-grid">
-					<div class="menu-grd">
-						<img src="images/17.jpg" alt=" " class="img-responsive" />
-						<h4>dolorem eum fugiat</h4>
-						<p>Duis aute irure dolor in reprehenderit in voluptate velit esse 
-							cillum dolore eu fugiat nulla pariatur.</p>
-						<div class="menu-grd-pos">
-							<p>$15</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 menu-grid">
-					<div class="menu-grd">
-						<img src="images/18.jpg" alt=" " class="img-responsive" />
-						<h4>dolorem eum fugiat</h4>
-						<p>Duis aute irure dolor in reprehenderit in voluptate velit esse 
-							cillum dolore eu fugiat nulla pariatur.</p>
-						<div class="menu-grd-pos">
-							<p>$15</p>
-						</div>
-					</div>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
+			@endforeach
+			<div class='clearfix'></div>
+
+			<button class="btn btn-success" onclick="redirector('/cart-add')"/>
 		</div>
-	</div>
+</div>	
 @endsection

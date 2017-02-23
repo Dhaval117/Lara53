@@ -1,1 +1,3 @@
-hello $name
+<?php
+echo Cart::count;
+?>
