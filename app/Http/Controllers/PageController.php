@@ -50,7 +50,12 @@ class PageController extends Controller
        DB::insert('insert into carts (Item_Name,Item_Price,Item_Quantity) values(?,?,?)',[$name,$price,$quantity]);
     } */
 
-    public function cart_add(){
+    public function cart_add($id,$name,$price){
+        Cart::add(['id'=>$id,'name'=>$name,'price'=>$price,'qty'=>1]);
+        return redirect()->to('/menu');
+    }
+
+    public function abc(){
         return view('abc');
     }
 }

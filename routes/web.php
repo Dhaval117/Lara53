@@ -15,10 +15,11 @@ Auth::routes();
 Route::get('/', 'PageController@home');
 Route::get('/home', 'PageController@home');
 Route::get('/about', 'PageController@about');
-Route::get('/menu', 'PageController@menu2');
+Route::get('/menu', 'PageController@menu');
 Route::get('/contact', 'PageController@contact');
 Route::get('/checkout','PageController@checkout');
-Route::get('/cart-add/{id}','PageController@cart_add');
+Route::get('/cart-add/{id}/{name}/{price}','PageController@cart_add');
+Route::get('/abc','PageController@abc');
 //Route::get('/logout', function () {
 //	Auth::logout();
   //  return view('home');

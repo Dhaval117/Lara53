@@ -24,7 +24,7 @@ Menu
 						</div>
 						<div class="row">
 						<div class="col-xs-3">
-						<button class="btn btn-success" onclick="Cart::add(['id' => '{{$item->Item_ID}}', 'name' => '{{$item->Item_Name}}', 'qty' => 1, 'price' => {{$item->Item_Price}},])">Add</button>
+						<button class="btn btn-success" onclick="redirector('cart-add/{{$item->Item_ID}}/{{$item->Item_Name}}/{{$item->Item_Price}}')">Add</button>
 						</div>
 						<div class="col-xs-2"></div>
 						<div class="col-xs-7">
@@ -43,7 +43,7 @@ Menu
 			@endforeach
 			<div class='clearfix'></div>
 
-			<button class="btn btn-success" onclick="redirector('/cart-add')"/>
+			<button class="btn btn-success" onclick="redirector('/abc')">Checkout</button>
 		</div>
 </div>	
 @endsection
