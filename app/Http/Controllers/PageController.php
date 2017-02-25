@@ -55,6 +55,11 @@ class PageController extends Controller
         return redirect()->to('/menu');
     }
 
+    public function cart_update($id,$qty){
+        Cart::update($id,$qty);
+        return redirect()->to('/abc');
+    }
+
     public function abc(){
         return view('abc');
     }

@@ -19,6 +19,7 @@ Route::get('/menu', 'PageController@menu');
 Route::get('/contact', 'PageController@contact');
 Route::get('/checkout','PageController@checkout');
 Route::get('/cart-add/{id}/{name}/{price}','PageController@cart_add');
+Route::get('/cart-update/{id}/{qty}','PageController@cart_update');
 Route::get('/abc','PageController@abc');
 //Route::get('/logout', function () {
 //	Auth::logout();
