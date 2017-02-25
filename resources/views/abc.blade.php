@@ -20,6 +20,12 @@ Cart
                     </tr>
                 </thead>
                 <tbody>
+                <script type="text/javascript">
+                    function updater(id,val){
+                        alert(val);
+                        redirector('/cart-update/id/val');
+                    }
+                </script>
                     @foreach($cart as $item)
                     <tr>
                        
@@ -33,7 +39,7 @@ Cart
                         <td class="cart_quantity">
                             <div class="cart_quantity_button">
                                 <a class="cart_quantity_up" href="/cart-update/{{$item->rowId}}/{{$item->qty+1}}"> + </a>
-                                <input class="cart_quantity_input" type="text" name="quantity" value="{{$item->qty}}" autocomplete="off" size="2">
+                                <input class="cart_quantity_input" type="text" onchange="window.location='/cart-update/{{$item->rowId}}/'+this.value" name="quantity" value="{{$item->qty}}" autocomplete="off" size="2">
                                 <a class="cart_quantity_down" href="/cart-update/{{$item->rowId}}/{{$item->qty-1}}"> - </a>
                             </div>
                         </td>
