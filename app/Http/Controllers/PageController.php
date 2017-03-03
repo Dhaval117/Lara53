@@ -63,4 +63,13 @@ class PageController extends Controller
     public function abc(){
         return view('abc');
     }
+
+    public function order(){
+        $content = Cart::content();
+        foreach($content as $row){
+        DB::insert('insert into orders (Item_Name,Item_Price,Quantity,Total) values(?,?,?,?)',[$row->name,$row->price,$row->qty,$row->subtotal]);
+        }
+        Cart::destroy();
+        return redirect()->to('/menu');
+    }
 }

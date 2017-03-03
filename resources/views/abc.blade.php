@@ -6,7 +6,7 @@ Cart
 
 @section('content')
 <?php $cart = Cart::content(); ?>
-<div class="table-responsive cart_info">
+        <div class="table-responsive cart_info">
             @if(count($cart))
             <table class="table table-condensed">
                 <thead>
@@ -57,5 +57,7 @@ Cart
                 </tbody>
 			</table>
 			{{Cart::subtotal()}}
+
+            <button class="btn btn-success" onclick="redirector('/order')">Order</button>
         </div>
  @endsection
