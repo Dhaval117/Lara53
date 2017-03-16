@@ -34,7 +34,12 @@ class ItemsController extends Controller
     public function editform(){ 
   		$items = DB::select('select * from items'); 
   		return view('admin.item_edit',['items'=>$items]); 	
- 	}
+ 	  }
+
+    public function orders(){
+      $orders = DB::select('select * from orders'); 
+      return view('admin.order_view',['orders'=>$orders]);
+    }
   
     public function newval($id) 
     { 

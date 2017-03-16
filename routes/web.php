@@ -36,7 +36,7 @@ Route::get('/insert','ItemsController@insertform')->middleware('AuthCheck');
 Route::post('create','ItemsController@insert')->middleware('AuthCheck');
 
 Route::get('view-items','ItemsController@index')->middleware('AuthCheck');
-
+Route::get('view-orders','ItemsController@orders')->middleware('AuthCheck');
 Route::get('edit-items','ItemsController@editform')->middleware('AuthCheck'); 
 Route::get('edit/{id}','ItemsController@newval')->middleware('AuthCheck'); 
 Route::post('edit/{id}','ItemsController@edit')->middleware('AuthCheck'); 
