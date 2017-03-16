@@ -20,17 +20,16 @@ Cart
                     </tr>
                 </thead>
                 <tbody>
-                <script type="text/javascript">
+     <!--           <script type="text/javascript">
                     function updater(id,val){
                         alert(val);
                         redirector('/cart-update/id/val');
-                    }
-                </script>
+                    }  
+                </script> -->
+            
                     @foreach($cart as $item)
                     <tr>
-                       
-                        <td class="cart_description">
-                            
+                         <td class="cart_description">    
                             <p>{{$item->name}}</p>
                         </td>
                         <td class="cart_price">

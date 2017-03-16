@@ -43,8 +43,11 @@ class PageController extends Controller
     }
 
     public function check($pwd){
-        if(DB::select('select * from passwords where password = ? ',[$pwd]))
+        if(DB::select('select * from passwords where password = ? ',[$pwd])) {
+            
+            session(['pwd'=>$pwd]); 
             return redirect()->to('/abc');
+        }
         else{
             return redirect()->to('/wrongpwd');
         }
@@ -77,8 +80,9 @@ class PageController extends Controller
 
     public function order(){
         $content = Cart::content();
+        $order_id = session('pwd');
         foreach($content as $row){
-        DB::insert('insert into orders (Item_Name,Item_Price,Quantity,Total) values(?,?,?,?)',[$row->name,$row->price,$row->qty,$row->subtotal]);
+        DB::insert('insert into orders (Order_ID,Item_Name,Item_Price,Quantity,Total) values(?,?,?,?,?)',[$order_id,$row->name,$row->price,$row->qty,$row->subtotal]);
         }
         Cart::destroy();
         return redirect()->to('/menu');
