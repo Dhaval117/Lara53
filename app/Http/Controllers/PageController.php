@@ -42,7 +42,7 @@ class PageController extends Controller
         return view('user.checkout');
     }
 
-    public function check($pwd){
+    public function check($pwd='aaa'){
         if(DB::select('select * from passwords where password = ? ',[$pwd])) {
             
             session(['pwd'=>$pwd]); 

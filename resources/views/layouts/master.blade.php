@@ -63,9 +63,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav">
 							<li class="hvr-bounce-to-bottom"><a href="/home">Home</a></li>
-							<li class="hvr-bounce-to-bottom"><a href="/about">About</a></li>
+					<!--		<li class="hvr-bounce-to-bottom"><a href="/about">About</a></li>  -->
 							<li class="hvr-bounce-to-bottom"><a href="/menu">Menu</a></li>
-							<li class="hvr-bounce-to-bottom" onclick="check()"><a href="#">Checkout</a></li>
+							<li class="hvr-bounce-to-bottom" onclick="check()"><a href="#">Cart</a></li>
 				<!--		Login Registration and Logout	
 							<li class="hvr-bounce-to-bottom">
 								@if(Auth::check()) 
@@ -98,39 +98,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="col-md-2 ftr_navi ftr">
 				<h3>Navigation</h3>
 				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="menu.html">menu</a></li>
-					<li><a href="index.html">Services</a></li>						
-					<li><a href="about.html">About</a></li>
-					<li><a href="contact.html">Contact</a></li>
+					<li><a href="/home">Home</a></li>
+					<li><a href="/menu">menu</a></li>						
+			<!--		<li><a href="/about">About</a></li>  -->
+					<li onclick="check()"><a>Cart</a></li>
 				</ul>
 			</div>
 			<div class="col-md-3 ftr_navi ftr">
-					 <h3>Members</h3>
+					 <h3>Developers</h3>
 					 <ul>
-						 <li><a href="#">Deserunt Mollit</a></li>
-						 <li><a href="#">Nulla Pariatur</a></li>
-						 <li><a href="#">Voluptate Velit</a></li>						
-						 <li><a href="#">Reprehenderit</a></li>
-						 <li><a href="#">Training</a></li>
+						 <li><a href="#">Dhaval Bhensdadiya</a></li>
+						 <li><a href="#">Ashish Chocha </a></li>
+						 <li><a href="#">Tirth Doshi </a></li>						
+						 <li><a href="#">Mihir Trivedi</a></li>
 					 </ul>
 			</div>
 			<div class="col-md-3 get_in_touch ftr">
 				<h3>Get In Touch</h3>
-				<p>Ola-ola street jump,</p>
-				<p>260-14 City, Country</p>
-				<p>+62 000-0000-00</p>
-				<a href="mailto:info@example.com">info@example.com</a>
+				<a href="www.wicon.co.in">www.wicon.co.in</a>
 			</div>
 			<div class="col-md-4 ftr-logo">
-				<a href="index.html"><h3>Delicacies <span> The Best Cake Bakery</span></h3></a>
-				<ul>
-					<li><a href="#" class="facebook"> </a></li>
-					<li><a href="#" class="twitter"> </a></li>
-					<li><a href="#" class="g"> </a></li>
-					<li><a href="#" class="in"> </a></li>
-				</ul>
-				<p>© 2016 Delicacies.  All Rights Reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+				<a href="index.html"><h3>Source Code </h3></a>
+				
+				<p><a href="https://github.com/Dhaval117/Lara53">WiCon GitHub Repository</a></p>
 			</div>
 			<div class="clearfix"> </div>
 		</div>

@@ -5,6 +5,7 @@ Home
 @endsection
 
 @section('content')
+<!--
 <div class="wlcome">
 		<div class="container">
 			<div class="wlcome-grids">
@@ -127,8 +128,8 @@ Home
 			</div>
 		</div>
 	</div>
-<!-- //wlcome -->
-<!-- welcome-bottom -->
+ //wlcome 
+ welcome-bottom 
 	<div class="welcome-bottom">
 		<div class="container">
 			<h3>What We do</h3>
@@ -182,8 +183,8 @@ Home
 			</div>
 		</div>
 	</div>
-<!-- //welcome-bottom -->
-<!-- video -->
+ //welcome-bottom 
+ video 
 	<div class="video">
 		<div class="container">
 			<div class="video-grid">
@@ -204,4 +205,5 @@ Home
 			</div>
 		</div>
 	</div>
+-->
 @endsection
