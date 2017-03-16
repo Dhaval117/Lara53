@@ -65,7 +65,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<li class="hvr-bounce-to-bottom"><a href="/home">Home</a></li>
 							<li class="hvr-bounce-to-bottom"><a href="/about">About</a></li>
 							<li class="hvr-bounce-to-bottom"><a href="/menu">Menu</a></li>
-							<li class="hvr-bounce-to-bottom"><a href="/contact">Contact Us</a></li>
+							<li class="hvr-bounce-to-bottom" onclick="check()"><a href="#">Checkout</a></li>
 				<!--		Login Registration and Logout	
 							<li class="hvr-bounce-to-bottom">
 								@if(Auth::check()) 
