@@ -20,3 +20,11 @@ function qty_show(m){
    x[m].style.display = 'block' ;
 //	$("input[type='number']").css({'display','block'});
 }
+
+function check(){
+	var password = prompt("Please enter your code");
+	if(password == 'abc')
+		redirector('/abc');
+	else
+		alert("incorrect password");
+}
