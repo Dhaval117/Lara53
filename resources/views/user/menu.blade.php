@@ -43,7 +43,7 @@ Menu
 			@endforeach
 			<div class='clearfix'></div>
 
-			<button class="btn btn-success" onclick="check()">Checkout</button>
+		<!--	<button class="btn btn-success" onclick="check()">Checkout</button>  -->
 		</div>
 </div>	
 @endsection
