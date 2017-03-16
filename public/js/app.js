@@ -23,8 +23,5 @@ function qty_show(m){
 
 function check(){
 	var password = prompt("Please enter your code");
-	if(password == 'abc')
-		redirector('/abc');
-	else
-		alert("incorrect password");
+	redirector('/check/'+password);
 }

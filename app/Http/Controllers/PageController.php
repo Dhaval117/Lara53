@@ -42,6 +42,17 @@ class PageController extends Controller
         return view('user.checkout');
     }
 
+    public function check($pwd){
+        if(DB::select('select * from passwords where password = ? ',[$pwd]))
+            return redirect()->to('/abc');
+        else{
+            return redirect()->to('/wrongpwd');
+        }
+    }
+
+    public function wrongpwd(){
+        return view('wpwd');
+    }
   /*  public function cart_add($id){
        $item = DB::select('select * from items where Item_ID = ?',[$id]);
        $name = $item[0]->Item_Name;
