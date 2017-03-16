@@ -17,13 +17,18 @@ class ItemsController extends Controller
 	  $ingredients = $request->input('item_ingredients');
 	  $description = $request->input('item_description');
 	  $availability = $request->input('availability');
-	  DB::insert('insert into items (Item_Name,Item_Price,Item_Ingredients,Item_Description,Availability) values(?,?,?,?,?)',[$name,$price,$ingredients,$description,$availability]); 
-	  echo "Record inserted successfully.<br/>"; 
-	  echo '<a href="/insert">Click Here</a> to go back.';
+	  if(DB::insert('insert into items (Item_Name,Item_Price,Item_Ingredients,Item_Description,Availability) values(?,?,?,?,?)',[$name,$price,$ingredients,$description,$availability])) 
+	  {
+        return redirect()->to('view-items');
+    }else{
+        echo 'Item not added.';
+        echo "<p><a href='/insert'><button class='btn btn-success'>Try Again</button></a></p>";    
+    } 
+/*	  echo '<a href="/insert">Click Here</a> to go back.';
     echo "<p><a href='/insert'><button class='btn btn-success'>Add Items</button></a></p>
           <p><a href='/view-items'><button class='btn btn-success'>View Items</button></a></p>
           <p><a href='/edit-items'><button class='btn btn-success'>Update Items</button></a></p>
-          <p><a href='/delete-items'><button class='btn btn-success'>Delete Items</button></a></p>";
+          <p><a href='/delete-items'><button class='btn btn-success'>Delete Items</button></a></p>"; */
     }
 
     public function index(){
@@ -54,13 +59,19 @@ class ItemsController extends Controller
 	  	$ingredients = $request->input('item_ingredients');
 	  	$description = $request->input('item_description');
 	  	$availability = $request->input('availability');
-  		DB::update('update items set Item_Name = ?, Item_Price = ?,Item_Ingredients = ?,Item_Description = ?,Availability = ? where Item_ID = ?',[$name,$price,$ingredients,$description,$availability,$id]); 
-  		echo "Record updated successfully.<br/>"; 
+  		if(DB::update('update items set Item_Name = ?, Item_Price = ?,Item_Ingredients = ?,Item_Description = ?,Availability = ? where Item_ID = ?',[$name,$price,$ingredients,$description,$availability,$id])) 
+  		{
+          return redirect()->to('view-items');
+      }else{
+          echo "Item not Updated";
+          echo "<p><a href='/edit-items'><button class='btn btn-success'>Try Again</button></a></p>";
+      }
+      /*echo "Record updated successfully.<br/>"; 
   		echo '<a href="/view-items">Click Here</a> to go back.';
       echo "<p><a href='/insert'><button class='btn btn-success'>Add Items</button></a></p>
             <p><a href='/view-items'><button class='btn btn-success'>View Items</button></a></p>
             <p><a href='/edit-items'><button class='btn btn-success'>Update Items</button></a></p>
-            <p><a href='/delete-items'><button class='btn btn-success'>Delete Items</button></a></p>"; 
+            <p><a href='/delete-items'><button class='btn btn-success'>Delete Items</button></a></p>"; */
     }
 
     public function deleteform(){
@@ -69,12 +80,19 @@ class ItemsController extends Controller
     }
 
     public function destroy($id){
-    	DB::delete('delete from items where Item_ID = ?',[$id]); 
+    	if(DB::delete('delete from items where Item_ID = ?',[$id]))
+      {
+        return redirect()->to('view-items');
+      }else{
+          echo 'Item not deleted';
+          echo "<p><a href='/delete-items'><button class='btn btn-success'>Try Again</button></a></p>";
+      } 
+      /*
   		echo "Record deleted successfully.<br/>"; 
   		echo '<a href="/delete-items">Click Here</a> to go back.';
       echo "<p><a href='/insert'><button class='btn btn-success'>Add Items</button></a></p>
             <p><a href='/view-items'><button class='btn btn-success'>View Items</button></a></p>
             <p><a href='/edit-items'><button class='btn btn-success'>Update Items</button></a></p>
-            <p><a href='/delete-items'><button class='btn btn-success'>Delete Items</button></a></p>";
+            <p><a href='/delete-items'><button class='btn btn-success'>Delete Items</button></a></p>";*/
     }
 }
