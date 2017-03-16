@@ -1,7 +1,11 @@
 <html> 
-<head><title>View Items | Edit</title></head> 
+<head><title>View Items | Edit</title>
+<link rel="stylesheet" href="css/table.css">
+<link rel="stylesheet" href="css/form-basic.css">
+<link rel="stylesheet" href="css/demo.css">
+</head> 
 <body> 
-<table border="1"> 
+<table class="responstable"> 
 <tr> 
  <td>ID</td> 
  <td>Name</td>
@@ -23,10 +27,12 @@
  </tr> 
 @endforeach 
 </table> 
-
-<p><a href='/insert'><button class='btn btn-success'>Add Items</button></a></p>
-<p><a href='/view-items'><button class='btn btn-success'>View Items</button></a></p>
-<p><a href='/edit-items'><button class='btn btn-success'>Update Items</button></a></p>
+<ul>
+        <li> <a href='/view-orders'>View Orders</a></li>       
+        <li><a href='/insert'>Add Items</a></li>
+        <li><a href='/view-items'>View Items</a></li>
+        <li><a href='/edit-items'>Update Items</a></li>
+  </ul>
 
 </body>  
 </html>
