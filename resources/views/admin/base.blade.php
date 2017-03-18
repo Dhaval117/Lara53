@@ -15,6 +15,7 @@ Base
 			<p>	<button onclick="redirector('/edit-items')" class='btn btn-success '>Update Items</button> </p>
 			<p>	<button onclick="redirector('/delete-items')" class='btn btn-success '>Delete Items</button></p>
 			<p>	<button onclick="redirector('/view-orders')" class='btn btn-success '>View Orders</button></p>
+			<p>	<button onclick="redirector('/code')" class='btn btn-success '>Generate codes</button></p>
 			</div>
 		</div>
 	</div>

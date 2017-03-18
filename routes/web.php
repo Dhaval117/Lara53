@@ -28,7 +28,13 @@ Route::get('/wrongpwd','PageController@wrongpwd');
 //	Auth::logout();
   //  return view('home');
 //});
-
+Route::get('/code',function(){
+		App\Code::getQuery()->delete();
+       // DB::table('codes')->truncate();
+        Artisan::call('db:seed');
+        return redirect()->to('/view-code');
+})->middleware('AuthCheck');
+Route::get('/view-code','PageController@showcode')->middleware('AuthCheck');
 Route::get('/admin','PageController@admin');
 Route::get('/base','PageController@base')->middleware('AuthCheck');
 

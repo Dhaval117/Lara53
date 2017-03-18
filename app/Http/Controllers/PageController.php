@@ -87,4 +87,16 @@ class PageController extends Controller
         Cart::destroy();
         return redirect()->to('/menu');
     }
+
+    public function code(){
+        //Code::getQuery()->delete();
+        DB::table('codes')->truncate();
+        Artisan::call('db:seed');
+        return redirect()->to('/view-code');
+    }
+
+    public function showcode(){
+        $codes = DB::select('select * from codes'); 
+        return view('admin.code_view',['codes'=>$codes]);
+    }
 }
