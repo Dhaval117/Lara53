@@ -42,10 +42,10 @@ class PageController extends Controller
         return view('user.checkout');
     }
 
-    public function check($pwd='aaa'){
-        if(DB::select('select * from passwords where password = ? ',[$pwd])) {
+    public function check($code='aaa'){
+        if(DB::select('select * from codes where code = ? ',[$code])) {
             
-            session(['pwd'=>$pwd]); 
+            session(['pwd'=>$code]); 
             return redirect()->to('/abc');
         }
         else{
@@ -89,10 +89,10 @@ class PageController extends Controller
     }
 
     public function code(){
-        //Code::getQuery()->delete();
-        DB::table('codes')->truncate();
-        Artisan::call('db:seed');
-        return redirect()->to('/view-code');
+     //   Code::getQuery()->delete();
+       // DB::table('codes')->truncate();
+      //  Artisan::call('db:seed');
+       // return redirect()->to('/view-code');
     }
 
     public function showcode(){
