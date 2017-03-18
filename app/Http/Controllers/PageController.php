@@ -83,6 +83,7 @@ class PageController extends Controller
         $order_id = session('pwd');
         foreach($content as $row){
         DB::insert('insert into orders (Order_ID,Item_Name,Item_Price,Quantity,Total) values(?,?,?,?,?)',[$order_id,$row->name,$row->price,$row->qty,$row->subtotal]);
+        DB::update("update items set Availability = (Availability - $row->qty) where Item_Name = ?",[$row->name]);
         }
         Cart::destroy();
         return redirect()->to('/menu');
