@@ -10,13 +10,15 @@
  <td>Name</td>
  <td>Price</td>
  <td>Quantity</td>
+ <td>Date & Time</td>
 </tr> 
 @foreach ($orders as $order) 
  <tr> 
   <td>{{ $order->Order_ID }}</td> 
   <td>{{ $order->Item_Name }}</td>
   <td>{{ $order->Item_Price }}</td>
-  <td>{{ $order->Quantity }}</td> 
+  <td>{{ $order->Quantity }}</td>
+  <td>{{ $order->created_at }}</td> 
  </tr> 
 @endforeach 
 </table> 
