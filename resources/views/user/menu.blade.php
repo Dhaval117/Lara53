@@ -7,6 +7,7 @@ Menu
 @section('content')
 <div class="menu">
 		<div class="container">
+			
 			<h3>Menu</h3>
 			<p class="nihil">Our Items</p>
 			<?php $count=0; $counter=-1; ?>
@@ -24,7 +25,8 @@ Menu
 						</div>
 						<div class="row">
 						<div class="col-xs-3">
-						<button class="btn btn-success" onclick="redirector('cart-add/{{$item->Item_ID}}/{{$item->Item_Name}}/{{$item->Item_Price}}')">Add</button>
+						
+						<button class="btn btn-success " data-toggle="modal" data-target="#myModal" onclick="redirector('cart-add/{{$item->Item_ID}}/{{$item->Item_Name}}/{{$item->Item_Price}}')">Add</button>
 						</div>
 						<div class="col-xs-2"></div>
 						<div class="col-xs-7">
@@ -45,5 +47,14 @@ Menu
 
 		<!--	<button class="btn btn-success" onclick="check()">Checkout</button>  -->
 		</div>
-</div>	
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">    
+    	    <div class="modal-body">
+            <h2>Added to cart</h2>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection

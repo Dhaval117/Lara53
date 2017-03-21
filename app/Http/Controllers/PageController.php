@@ -66,6 +66,8 @@ class PageController extends Controller
 
     public function cart_add($id,$name,$price){
         Cart::add(['id'=>$id,'name'=>$name,'price'=>$price,'qty'=>1]);
+        echo "<script>alert('Added To Cart');</script>";
+
         return redirect()->to('/menu');
     }
 
