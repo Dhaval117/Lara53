@@ -12,13 +12,13 @@
 <div class="form-row">
                 <label>
                     <span>Item_Name</span>
-                    <input type='text' name='item_name' value="<?php echo $items[0]->Item_Name; ?>" />
+                    <input type='text' name='item_name' value="<?php echo $items[0]->Item_Name; ?>" required />
                 </label>
  </div> 
  <div class="form-row">
                 <label>
                     <span>Item_Price</span>
-                    <input type='text' name='item_price' value='<?php echo $items[0]->Item_Price; ?>'/>
+                    <input type='text' name='item_price' value='<?php echo $items[0]->Item_Price; ?>' pattern="[0-9]+" required/>
                 </label>
  </div>
  
@@ -38,7 +38,7 @@
 <div class="form-row">
                 <label>
                     <span>Availability</span>
-                    <input type='text' name='availability' value='<?php echo $items[0]->Availability; ?>'/>
+                    <input type='text' name='availability' value='<?php echo $items[0]->Availability; ?>' pattern='[0-9]+' required/>
                 </label>
  </div>
 <div class="form-row">

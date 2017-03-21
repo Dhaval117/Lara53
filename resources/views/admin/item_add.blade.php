@@ -9,35 +9,35 @@
                 <h1>Insert new Item</h1>
             </div>
 <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>"> 
-<div class="form-row">
+                <div class="form-row">
                 <label>
                     <span>Item_Name</span>
-                    <input type='text' name='item_name' />
+                    <input type='text' name='item_name' required/>
                 </label>
- </div> 
- <div class="form-row">
+                </div> 
+                <div class="form-row">
                 <label>
                     <span>Item_Price</span>
-                    <input type='text' name='item_price' />
+                    <input type='text' name='item_price' pattern='[0-9]+' required/>
                 </label>
- </div>  
- <div class="form-row">
+                </div>  
+                <div class="form-row">
                 <label>
                     <span>Item_Ingredients</span>
                     <textarea name='item_ingredients'></textarea>
                 </label>
- </div>
+                 </div>
  
- <div class="form-row">
+                <div class="form-row">
                 <label>
                     <span>Item_Description</span>
                     <textarea name='item_description' ></textarea>
                 </label>
- </div>
- <div class="form-row">
+                </div>
+                <div class="form-row">
                 <label>
                     <span>Availability</span>
-                    <input type='text' name='availability' />
+                    <input type='text' name='availability' pattern='[0-9]+' required/>
                 </label>
  </div>
  

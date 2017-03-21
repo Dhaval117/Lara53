@@ -16,8 +16,6 @@ Route::get('/', 'PageController@home');
 Route::get('/home', 'PageController@home');
 Route::get('/about', 'PageController@about');
 Route::get('/menu', 'PageController@menu');
-Route::get('/contact', 'PageController@contact');
-Route::get('/checkout','PageController@checkout');
 Route::post('/cart-add','PageController@cart_add');
 Route::get('/cart-update/{id}/{qty}','PageController@cart_update');
 Route::get('/abc','PageController@abc');

@@ -25,23 +25,22 @@ body a:hover{
 }
 /*-- banner --*/
 .banner{
-	background: url(../images/banner1.jpg) no-repeat 0px 0px;
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    -ms-background-size: cover;
+	background: url(../images/banner1.jpg) no-repeat ;
+    background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    -ms-background-size: 100% 100%;
     width: 100%;
-    height: 700px;
-    
+    height: 450px;
 }
 .banner1{
 	background: url(../images/banner1.jpg) no-repeat 0px 0px;
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    -ms-background-size: cover;
+    background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    -ms-background-size: 100% 100%;
     min-height:300px;
 }
 .navbar-default {
@@ -1257,22 +1256,22 @@ ul.social-slide li i.mac{
 /*-----start-responsive-design------*/
 @media (max-width:1440px){
 	.banner {
-		background: url(../images/banner1.jpg) no-repeat -90px 0px;
-		background-size: cover;
-		-webkit-background-size: cover;
-		-moz-background-size: cover;
-		-o-background-size: cover;
-		-ms-background-size: cover;
+		background: url(../images/banner1.jpg) no-repeat;
+		background-size: 100% 100%;
+		-webkit-background-size: 100% 100%;
+		-moz-background-size: 100% 100%;
+		-o-background-size: 100% 100%;
+		-ms-background-size: 100% 100%;
 	}
 }
 @media (max-width:1280px){
 	.banner {
-		background: url(../images/banner1.jpg) no-repeat -250px 0px;
-		background-size: cover;
-		-webkit-background-size: cover;
-		-moz-background-size: cover;
-		-o-background-size: cover;
-		-ms-background-size: cover;
+		background: url(../images/banner1.jpg) no-repeat 0px 0px;
+		background-size: 100% 100%;
+		-webkit-background-size: 100% 100%;
+		-moz-background-size: 100% 100%;
+		-o-background-size: 100% 100%;
+		-ms-background-size: 100% 100%;
 		 min-height: 560px;
 	}
 	.banner-info {
@@ -1281,12 +1280,12 @@ ul.social-slide li i.mac{
 }
 @media (max-width:1024px){
 	.banner {
-		background: url(../images/banner1.jpg) no-repeat -110px 0px;
-		background-size: cover;
-		-webkit-background-size: cover;
-		-moz-background-size: cover;
-		-o-background-size: cover;
-		-ms-background-size: cover;
+		background: url(../images/banner1.jpg) no-repeat ;
+		background-size: 100% 100%;
+		-webkit-background-size: 100% 100%;
+		-moz-background-size: 100% 100%;
+		-o-background-size: 100% 100%;
+		-ms-background-size: 100% 100%;
 	}
 	.resp-tab-item {
 		padding: 12px 65px;
@@ -1420,12 +1419,12 @@ ul.social-slide li i.mac{
 		padding: 3em 0 3.5em;
 	}
 	.banner {
-		background: url(../images/banner1.jpg) no-repeat -175px 0px;
-		background-size: cover;
-		-webkit-background-size: cover;
-		-moz-background-size: cover;
-		-o-background-size: cover;
-		-ms-background-size: cover;
+		background: url(../images/banner1.jpg) no-repeat;
+		background-size: 100% 100%;
+		-webkit-background-size: 100% 100%;
+		-moz-background-size: 100% 100%;
+		-o-background-size: 100% 100%;
+		-ms-background-size: 100% 100%;
 		    min-height: 495px;
 	}
 	.banner-info {
@@ -1498,12 +1497,12 @@ ul.social-slide li i.mac{
 		width: 100%;
 	}
 	.banner {
-		background: url(../images/banner1.jpg) no-repeat -205px 0px;
-		background-size: cover;
-		-webkit-background-size: cover;
-		-moz-background-size: cover;
-		-o-background-size: cover;
-		-ms-background-size: cover;
+		background: url(../images/banner1.jpg) no-repeat;
+		background-size: 100% 100%;
+		-webkit-background-size: 100% 100%;
+		-moz-background-size: 100% 100%;
+		-o-background-size: 100% 100%;
+		-ms-background-size: 100% 100%;
 		min-height: 470px;
 	}
 	.wlcome-grid-left-grid h4 {
@@ -1559,12 +1558,12 @@ ul.social-slide li i.mac{
 }
 @media (max-width:480px){
 	.banner {
-		background: url(../images/banner1.jpg) no-repeat -330px 0px;
-		background-size: cover;
-		-webkit-background-size: cover;
-		-moz-background-size: cover;
-		-o-background-size: cover;
-		-ms-background-size: cover;
+		background: url(../images/banner1.jpg) no-repeat;
+		background-size: 100% 100%;
+		-webkit-background-size: 100% 100%;
+		-moz-background-size: 100% 100%;
+		-o-background-size: 100% 100%;
+		-ms-background-size: 100% 100%;
 		min-height: 500px;
 	}
 	.banner-info h1 {
@@ -1673,12 +1672,12 @@ ul.social-slide li i.mac{
 }
 @media (max-width: 414px){
 	.banner {
-		background: url(../images/banner1.jpg) no-repeat -365px 0px;
-		background-size: cover;
-		-webkit-background-size: cover;
-		-moz-background-size: cover;
-		-o-background-size: cover;
-		-ms-background-size: cover;
+		background: url(../images/banner1.jpg) no-repeat ;
+		background-size: 100% 100%;
+		-webkit-background-size: 100% 100%;
+		-moz-background-size: 100% 100%;
+		-o-background-size: 100% 100%;
+		-ms-background-size: 100% 100%;
 		min-height: 500px;
 	}
 	.banner-info {
@@ -1770,12 +1769,12 @@ ul.social-slide li i.mac{
 		padding-left: 1.1em;
 	}
 	.banner {
-		background: url(../images/banner1.jpg) no-repeat -266px 0px;
-		background-size: cover;
-		-webkit-background-size: cover;
-		-moz-background-size: cover;
-		-o-background-size: cover;
-		-ms-background-size: cover;
+		background: url(../images/banner1.jpg) no-repeat;
+		background-size: 100% 100%;
+		-webkit-background-size: 100% 100%;
+		-moz-background-size: 100% 100%;
+		-o-background-size: 100% 100%;
+		-ms-background-size: 100% 100%;
 		min-height: 365px;
 	}
 	.banner-info {

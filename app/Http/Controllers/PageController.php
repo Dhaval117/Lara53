@@ -18,12 +18,8 @@ class PageController extends Controller
     }
 
     public function menu(){
-        $items = DB::select('select * from items'); 
+        $items = DB::select('select * from items where Availability > 5'); 
         return view('user.menu',['items'=>$items]);
-    }
-
-    public function contact(){
-    	return view('user.contact');
     }
 
     public function admin(){
@@ -39,10 +35,6 @@ class PageController extends Controller
         return view('user.menu2',['items'=>$items]);
     }
 
-    public function checkout(){
-        return view('user.checkout');
-    }
-
     public function check($code='aaa'){
         if(DB::select('select * from codes where code = ? ',[$code])) {
             
@@ -55,7 +47,7 @@ class PageController extends Controller
     }
 
     public function wrongpwd(){
-        return view('wpwd');
+        return view('user.wpwd');
     }
   /*  public function cart_add($id){
        $item = DB::select('select * from items where Item_ID = ?',[$id]);
@@ -79,7 +71,11 @@ class PageController extends Controller
     }
 
     public function abc(){
-        return view('abc');
+        //session()->forget('pwd');
+        if(session('pwd'))
+            return view('user.abc');
+        else
+            return view('user.home');
     }
 
     public function order(){
@@ -89,6 +85,7 @@ class PageController extends Controller
         DB::insert('insert into orders (Order_ID,Item_Name,Item_Price,Quantity,Total) values(?,?,?,?,?)',[$order_id,$row->name,$row->price,$row->qty,$row->subtotal]);
         DB::update("update items set Availability = (Availability - $row->qty) where Item_Name = ?",[$row->name]);
         }
+        DB::delete('delete from codes where code = ?',[$order_id]);
         Cart::destroy();
         return redirect()->to('/menu');
     }
