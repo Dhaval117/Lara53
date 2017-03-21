@@ -131,6 +131,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--footer-->
 <!-- for bootstrap working -->
 		<script src="js/bootstrap.js"> </script>
+		<script type="text/javascript">
+		$(document).on('click','.cartadd',function(){
+		//alert($(this).name);
+			$.ajax({
+				type: 'post',
+				url: '/cart-add',
+				data: {
+					'_token': $('input[name=_token]').val(),
+					'id': $(this).data('id'),
+					'name': $(this).data('name'),
+					'price': $(this).data('price'),
+				},
+				success: function(data){
+					$('#myModal').modal('show');
+				}
+			});
+		}); 		
+		</script>
 <!-- //for bootstrap working -->
 </body>
 </html>

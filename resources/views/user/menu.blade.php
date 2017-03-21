@@ -11,7 +11,7 @@ Menu
 			<h3>Menu</h3>
 			<p class="nihil">Our Items</p>
 			<?php $count=0; $counter=-1; ?>
-			
+			{{ csrf_field()}}
 			@foreach($items as $item)
 			<?php $count++; $counter++; ?>
 			<div class="menu-grids">
@@ -25,8 +25,8 @@ Menu
 						</div>
 						<div class="row">
 						<div class="col-xs-3">
-						
-						<button class="btn btn-success " data-toggle="modal" data-target="#myModal" onclick="redirector('cart-add/{{$item->Item_ID}}/{{$item->Item_Name}}/{{$item->Item_Price}}')">Add</button>
+			<!--data-id="{{$item->Item_ID}}" data-name="{{$item->Item_Name}}" data-price="{{$item->Item_Price}}"-->			
+						<button class="btn btn-success cartadd" data-id="{{$item->Item_ID}}" data-name="{{$item->Item_Name}}" data-price="{{$item->Item_Price}}">Add</button>
 						</div>
 						<div class="col-xs-2"></div>
 						<div class="col-xs-7">

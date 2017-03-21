@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use DB;
 use Cart;
 use Illuminate\Http\Request;
+use Response;
 
 class PageController extends Controller
 {
@@ -64,11 +65,12 @@ class PageController extends Controller
        DB::insert('insert into carts (Item_Name,Item_Price,Item_Quantity) values(?,?,?)',[$name,$price,$quantity]);
     } */
 
-    public function cart_add($id,$name,$price){
-        Cart::add(['id'=>$id,'name'=>$name,'price'=>$price,'qty'=>1]);
-        echo "<script>alert('Added To Cart');</script>";
+    public function cart_add(Request $req){
 
-        return redirect()->to('/menu');
+        Cart::add(['id'=>$req->id,'name'=>$req->name,'price'=>$req->price,'qty'=>1]);
+       // echo "<script>alert('Added To Cart');</script>";
+       
+      //  return redirect()->to('/menu');
     }
 
     public function cart_update($id,$qty){
