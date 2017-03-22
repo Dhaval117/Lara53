@@ -15,7 +15,7 @@ Cart
                         <td class="price">Price</td>
                         <td class="quantity">Quantity</td>
                         <td class="total">Total</td>
-                        <td></td>
+                        
                     </tr>
                 </thead>
                 <tbody>
@@ -55,21 +55,18 @@ Cart
                         <td><p class="itemname">{{$item->name}}</p></td>
                         <td><p class="itemprice">{{$item->price}}</p></td>
                         <td>
-                        <button class="cartplus" data-id=""><span class="glyphicon glyhicon-plus"></span></button>
                         <input type="text" class="itemqty" style="width:50px" value="{{$item->qty}}" pattern="[0-9]+" data-id='{{$item->id}}' data-rowid="{{$item->rowId}}" data-price='{{$item->price}}'>
-                        <button><span class="glyphicon glyhicon-minus"></span></button>
                         </td>
-                        <td><p class="itemcost">{{$item->subtotal}}</p></td>
-                        <td><button class="btn btn-danger itemdelete"><span class="glyphicon glyhicon-minus"></span>Delete</button></td> 
+                        <td><p class="itemcost">{{$item->subtotal}}</p></td> 
                     @endforeach
                     @else
                 <p>You have no items in the shopping cart</p>
                 @endif
                 </tbody>
 			</table>
-			<div id="cart-total" class="pull-right" style="margin-right: 260px">{{Cart::subtotal()}}</div>
+			<div id="cart-total" class="pull-right" style="margin-right: 200px">{{Cart::subtotal()}}</div>
             <br/><br/>
-            <div class="pull-right" style="margin-right: 240px"><button class="btn btn-success" onclick="redirector('/order')">Order</button></div>
+            <div class="pull-right" style="margin-right: 200px"><button class="btn btn-success" onclick="redirector('/order')">Order</button></div>
         </div>
         <br/>
  @endsection

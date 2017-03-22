@@ -98,6 +98,7 @@ class PageController extends Controller
         }
         DB::delete('delete from codes where code = ?',[$order_id]);
         Cart::destroy();
+        session()->forget('pwd');
         return redirect()->to('/menu');
     }
 
