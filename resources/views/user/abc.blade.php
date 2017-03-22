@@ -33,7 +33,7 @@ Cart
                             <p>{{$item->name}}</p>
                         </td>
                         <td class="cart_price">
-                            <p>${{$item->price}}</p>
+                            <p>&#8377;{{$item->price}}</p>
                         </td>
                         <td class="cart_quantity">
                             <div class="cart_quantity_button">
@@ -43,7 +43,7 @@ Cart
                             </div>
                         </td>
                         <td class="cart_total">
-                            <p class="cart_total_price">${{$item->subtotal}}</p>
+                            <p class="cart_total_price">&#8377;{{$item->subtotal}}</p>
                         </td>
                         <td class="cart_delete">
                             <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
@@ -55,8 +55,9 @@ Cart
                 @endif
                 </tbody>
 			</table>
-			{{Cart::subtotal()}}
-
-            <button class="btn btn-success" onclick="redirector('/order')">Order</button>
+			<div class="pull-right" style="margin-right: 260px">{{Cart::subtotal()}}</div>
+            <br/><br/>
+            <div class="pull-right" style="margin-right: 240px"><button class="btn btn-success" onclick="redirector('/order')">Order</button></div>
         </div>
+        <br/>
  @endsection
