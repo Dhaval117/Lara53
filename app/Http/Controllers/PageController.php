@@ -70,10 +70,21 @@ class PageController extends Controller
         return redirect()->to('/abc');
     }
 
+    public function cartUpdate(Request $req){
+        Cart::update($req->rowid,$req->qty);
+        $subtotal = $req->qty * $req->price;
+        $total = Cart::subtotal();
+        $data = array('id'=>$req->id,'qty'=>$req->qty,'subtotal'=>$subtotal,'total'=>$total);
+     //   echo $data;
+        echo json_encode($data);
+    }
+
     public function abc(){
         //session()->forget('pwd');
-        if(session('pwd'))
-            return view('user.abc');
+        if(session('pwd')){
+            $cart = Cart::content();
+            return view('user.abc',['cart'=>$cart]);
+        }
         else
             return view('user.home');
     }

@@ -18,6 +18,7 @@ Route::get('/about', 'PageController@about');
 Route::get('/menu', 'PageController@menu');
 Route::post('/cart-add','PageController@cart_add');
 Route::get('/cart-update/{id}/{qty}','PageController@cart_update');
+Route::post('/cart-updater','PageController@cartUpdate');
 Route::get('/abc','PageController@abc');
 Route::get('/order','PageController@order');
 Route::get('/check/{pwd?}','PageController@check');
