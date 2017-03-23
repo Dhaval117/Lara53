@@ -11,11 +11,11 @@ Cart
                 <thead>
                     <tr class="cart_menu">
                    
-                        <td class="description" >Name</td>
-                        <td class="price">Price</td>
-                        <td class="quantity">Quantity</td>
-                        <td class="total">Total</td>
-                        
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th>Remove</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -55,9 +55,10 @@ Cart
                         <td><p class="itemname">{{$item->name}}</p></td>
                         <td><p class="itemprice">{{$item->price}}</p></td>
                         <td>
-                        <input type="text" class="itemqty" style="width:50px" value="{{$item->qty}}" pattern="[0-9]+" data-id='{{$item->id}}' data-rowid="{{$item->rowId}}" data-price='{{$item->price}}'>
+                        <input type="number" min="1" class="itemqty" style="width:50px" value="{{$item->qty}}" pattern="[0-9]+" data-id='{{$item->id}}' data-rowid="{{$item->rowId}}" data-price='{{$item->price}}'>
                         </td>
-                        <td><p class="itemcost">{{$item->subtotal}}</p></td> 
+                        <td><p class="itemcost">{{$item->subtotal}}</p></td>
+                        <td><button class="btn btn-danger removeitem" data-id="{{$item->id}}" data-msg="remove" data-rowid="{{$item->rowId}}">Delete</button> </td>
                     @endforeach
                     @else
                 <p>You have no items in the shopping cart</p>
