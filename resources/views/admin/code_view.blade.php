@@ -1,19 +1,27 @@
 <html> 
-<head><title>View Items</title></head> 
-<link rel="stylesheet" href="css/table.css">
-<link rel="stylesheet" href="css/form-basic.css">
-<link rel="stylesheet" href="css/demo.css">
+<head><title>User Codes</title></head> 
+<!--<link rel="stylesheet" href="css/table.css">
+<link rel="stylesheet" href="css/form-basic.css"> -->
+<link rel="stylesheet" href="css/demo.css"> 
+<link rel="stylesheet" href="css/bootstrap.css">
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/bootstrap.js"></script>
+</head> 
 <body> 
-<table class="responstable"> 
+<div class="table-responsive">
+<table class="table table-striped"> 
+<thead>
 <tr> 
- <td>ID</td>
- <td>Code</td> 
+ <th>ID</th>
+ <th>Code</th> 
+ <th>Table</th>
 </tr> 
 <?php $i=1; ?>
 @foreach ($codes as $code) 
  <tr> 
   <td> {{ $i++}} </td>
-  <td>{{ $code->code }}</td>  
+  <td>{{ $code->code }}</td>
+  <td></td>  
  </tr> 
 @endforeach 
 </table> 
