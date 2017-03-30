@@ -38,7 +38,8 @@ class PageController extends Controller
     public function check($code='aaa'){
         if(DB::select('select * from codes where code = ? ',[$code])) {
             
-            session(['pwd'=>$code]); 
+            session(['pwd'=>$code]);
+            session(['opwd'=>$code]); 
             return redirect()->to('/abc');
         }
         else{
@@ -48,6 +49,16 @@ class PageController extends Controller
 
     public function wrongpwd(){
         return view('user.wpwd');
+    }
+
+    public function myorder(){
+        if(session('opwd')){
+            $code = session('opwd');
+            $order = DB::select('select * from orders where order_ID = ? ',[$code]);
+            return view('user.myorder',['order'=>$order]);
+        }else{
+            return view('user.no_order');
+        }
     }
   /*  public function cart_add($id){
        $item = DB::select('select * from items where Item_ID = ?',[$id]);

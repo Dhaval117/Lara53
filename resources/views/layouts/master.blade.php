@@ -55,7 +55,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<span class="icon-bar"></span>
 					  </button>
 						<div class="logo">
-							<a class="navbar-brand" href="index.html">Delicacies <span>The Best Cake Bakery</span></a>
+							<a class="navbar-brand" href="/home">Delicacies <span>The Best Cake Bakery</span></a>
 						</div>
 					</div>
 
@@ -66,6 +66,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<!--		<li class="hvr-bounce-to-bottom"><a href="/about">About</a></li>  -->
 							<li class="hvr-bounce-to-bottom"><a href="/menu">Menu</a></li>
 							<li class="hvr-bounce-to-bottom" onclick="check()"><a href="#">Cart</a></li>
+							<li class="hvr-bounce-to-bottom"><a href="/myorder">MyOrder</a></li>
 				<!--		Login Registration and Logout	
 							<li class="hvr-bounce-to-bottom">
 								@if(Auth::check()) 

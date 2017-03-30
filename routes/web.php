@@ -23,6 +23,7 @@ Route::get('/abc','PageController@abc');
 Route::get('/order','PageController@order');
 Route::get('/check/{pwd?}','PageController@check');
 Route::get('/wrongpwd','PageController@wrongpwd');
+Route::get('/myorder','PageController@myorder');
 //Route::get('/logout', function () {
 //	Auth::logout();
   //  return view('home');

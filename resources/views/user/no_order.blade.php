@@ -2,7 +2,7 @@
 <html>
     <head>
 	
-        <title>incorrect Password</title>
+    <title>No Orders</title>
 	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 	
         <style>
@@ -41,7 +41,7 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Your Password is incorrect</div>
+                <div class="title">You have not ordered anything</div>
             </div><br />
             <button class="btn btn-primary " style="float:center" onclick="redirector('/menu')">Go Back</button>
         </div>
