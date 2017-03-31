@@ -21,7 +21,7 @@ Menu
 						<h4>{{$item->Item_Name}}</h4>
 						<p>{{$item->Item_Description}}</p>
 						<div class="menu-grd-pos">
-							<p>{{$item->Item_Price}}</p>
+							<p>&#8377;{{$item->Item_Price}}</p>
 						</div>
 						<div class="row">
 						<div class="col-xs-3">

@@ -21,9 +21,9 @@ MyOrder
                     @foreach($order as $item)
                         <tr>
                         <td>{{$item->Item_Name}}</td>
-                        <td>{{$item->Item_Price}}</td>
+                        <td>&#8377;{{$item->Item_Price}}</td>
                         <td>{{$item->Quantity}}</td>
-                        <td>{{$item->Total}}</td>
+                        <td>&#8377;{{$item->Total}}</td>
                         </tr>
                         <?php $amount = $amount + $item->Total; ?>
                     @endforeach
@@ -31,7 +31,7 @@ MyOrder
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td><b>{{$amount}}</b></td>
+                        <td><b>&#8377;{{$amount}}</b></td>
                         </tr>
                 </tbody>
 			</table>
