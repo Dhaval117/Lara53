@@ -51,8 +51,6 @@ Cart
                         <td><button class="btn btn-success" onclick="redirector('/order')">Order</button></td>
                         </tr>
                 </tbody>
-			</table>
-            {{Cart::count()}}
+			</table>     
         </div>
-        
  @endsection
