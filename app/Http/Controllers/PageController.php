@@ -40,7 +40,7 @@ class PageController extends Controller
             
             session(['pwd'=>$code]);
             session(['opwd'=>$code]); 
-            return redirect()->to('/abc');
+            return redirect()->to('/order');
         }
         else{
             return redirect()->to('/wrongpwd');
@@ -96,12 +96,12 @@ class PageController extends Controller
 
     public function abc(){
         //session()->forget('pwd');
-        if(session('pwd')){
+        if(Cart::count()){
             $cart = Cart::content();
             return view('user.abc',['cart'=>$cart]);
         }
         else
-            return view('user.home');
+            return view('user.no_order');
     }
 
     public function order(){
@@ -114,7 +114,7 @@ class PageController extends Controller
         DB::delete('delete from codes where code = ?',[$order_id]);
         Cart::destroy();
         session()->forget('pwd');
-        return redirect()->to('/menu');
+        return redirect()->to('/myorder');
     }
 
     public function code(){

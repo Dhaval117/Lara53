@@ -43,7 +43,7 @@
             <div class="content">
                 <div class="title">Your Password is incorrect</div>
             </div><br />
-            <button class="btn btn-primary " style="float:center" onclick="redirector('/menu')">Go Back</button>
+            <button class="btn btn-primary " style="float:center" onclick="redirector('/abc')">Go Back</button>
         </div>
     </body>
 </html>
