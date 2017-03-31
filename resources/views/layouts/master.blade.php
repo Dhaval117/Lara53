@@ -152,25 +152,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 		$('.table').on('change','.itemqty',function(){
 			//alert('cache');
-			$.ajax({
-				cache: 'false',
-				type: 'post',
-				data: {
-					'_token': $('input[name=_token]').val(),
-					'id': $(this).data('id'),
-					'rowid': $(this).data('rowid'),
-					'qty': $(this).val(),
-					'price': $(this).data('price'),	
-				},
-				dataType: 'json',
-				url: '/cart-updater',
-				success: function(data){
-				
-				//alert($('#cart-total').text());
-					$('.item'+data.id).find('.itemcost').html(data.subtotal);
-					$('#cart-total').html(data.total);
-				}
-			});
+			if( $(this).val() <= 10){
+				$.ajax({
+					cache: 'false',
+					type: 'post',
+					data: {
+						'_token': $('input[name=_token]').val(),
+						'id': $(this).data('id'),
+						'rowid': $(this).data('rowid'),
+						'qty': $(this).val(),
+						'price': $(this).data('price'),	
+					},
+					dataType: 'json',
+					url: '/cart-updater',
+					success: function(data){
+					
+					//alert($('#cart-total').text());
+						$('.item'+data.id).find('.itemcost').html(data.itemtotal);
+						$('#cart-subtotal').html(data.subtotal);
+						$('#cart-tax').html(data.tax);
+						$('#cart-total').html(data.total);
+					}
+				});
+			}
 		});
 
 		$('.table').on('click','.removeitem',function(){
@@ -191,6 +195,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				
 				//alert($('#cart-total').text());
 					$('.item'+data.id).hide();
+					$('#cart-subtotal').html(data.subtotal);
+					$('#cart-tax').html(data.tax);
 					$('#cart-total').html(data.total);
 				}
 			});

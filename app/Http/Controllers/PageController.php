@@ -84,9 +84,11 @@ class PageController extends Controller
     public function cartUpdate(Request $req){
         if($req->msg == 'remove' || $req->qty > 0){
         Cart::update($req->rowid,$req->qty);
-        $subtotal = $req->qty * $req->price;
-        $total = Cart::subtotal();
-        $data = array('id'=>$req->id,'qty'=>$req->qty,'subtotal'=>$subtotal,'total'=>$total);
+        $itemtotal = $req->qty * $req->price;
+        $subtotal = Cart::subtotal();
+        $tax = Cart::tax();
+        $total = Cart::total();
+        $data = array('id'=>$req->id,'qty'=>$req->qty,'itemtotal'=>$itemtotal,'subtotal'=>$subtotal,'tax'=>$tax,'total'=>$total);
      //   echo $data;
         echo json_encode($data);
         }

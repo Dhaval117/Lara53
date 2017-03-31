@@ -13,8 +13,8 @@ Cart
                         <th>Name</th>
                         <th>Price</th>
                         <th>Quantity</th>
-                        <th>Remove</th>
                         <th>Total</th>
+                        <th>Remove</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -29,14 +29,30 @@ Cart
                         <td>&#8377;<span class="itemcost">{{$item->subtotal}}</span></td>
                         <td><button class="btn btn-danger removeitem" data-id="{{$item->id}}" data-msg="remove" data-rowid="{{$item->rowId}}">Delete</button> </td>
                     @endforeach
-                        <tr>
+                        <tr class="info">
+                        <td>Subtotal</td>
                         <td></td>
                         <td></td>
+                        <td>&#8377;<span id="cart-subtotal">{{Cart::subtotal()}}</span></td>
                         <td></td>
-                        <td>&#8377;<span id="cart-total">{{Cart::subtotal()}}</span></td>
+                        </tr>
+                        <tr class="success">
+                        <td>Tax</td>
+                        <td>10%</td>
+                        <td></td>
+                        <td>&#8377;<span id="cart-tax">{{Cart::tax()}}</span></td>
+                        <td></td>
+                        </tr>
+                        <tr class="warning">
+                        <td>Total</td>
+                        <td></td>
+                        <td></td>
+                        <td>&#8377;<span id="cart-total">{{Cart::total()}}</span></td>
                         <td><button class="btn btn-success" onclick="redirector('/order')">Order</button></td>
+                        </tr>
                 </tbody>
 			</table>
+            {{Cart::count()}}
         </div>
         
  @endsection
