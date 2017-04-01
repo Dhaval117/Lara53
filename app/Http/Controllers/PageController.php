@@ -96,7 +96,7 @@ class PageController extends Controller
 
     public function abc(){
         //session()->forget('pwd');
-        if(Cart::count()){
+        if(Cart::count() || session('opwd')){
             $cart = Cart::content();
             return view('user.abc',['cart'=>$cart]);
         }
