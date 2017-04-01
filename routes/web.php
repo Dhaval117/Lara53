@@ -37,7 +37,8 @@ Route::get('/code',function(){
 Route::get('/view-code','PageController@showcode')->middleware('AuthCheck');
 Route::get('/admin','PageController@admin');
 Route::get('/base','PageController@base')->middleware('AuthCheck');
-
+Route::get('/bill','PageController@bill')->middleware('AuthCheck');
+Route::get('/generate/{code}','PageController@generate')->middleware('AuthCheck');
 Route::get('/insert','ItemsController@insertform')->middleware('AuthCheck');
 Route::post('create','ItemsController@insert')->middleware('AuthCheck');
 

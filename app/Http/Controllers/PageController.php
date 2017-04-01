@@ -37,7 +37,6 @@ class PageController extends Controller
 
     public function check($code='aaa'){
         if(DB::select('select * from codes where code = ? ',[$code])) {
-            
             session(['pwd'=>$code]);
             session(['opwd'=>$code]); 
             return redirect()->to('/order');
@@ -111,7 +110,7 @@ class PageController extends Controller
         DB::insert('insert into orders (Order_ID,Item_Name,Item_Price,Quantity,Total) values(?,?,?,?,?)',[$order_id,$row->name,$row->price,$row->qty,$row->subtotal]);
         DB::update("update items set Availability = (Availability - $row->qty) where Item_Name = ?",[$row->name]);
         }
-        DB::delete('delete from codes where code = ?',[$order_id]);
+        //DB::delete('delete from codes where code = ?',[$order_id]);
         Cart::destroy();
         session()->forget('pwd');
         return redirect()->to('/myorder');
@@ -128,4 +127,16 @@ class PageController extends Controller
         $codes = DB::select('select * from codes'); 
         return view('admin.code_view',['codes'=>$codes]);
     }
+
+    public function bill(){
+        $codes = DB::select('select * from codes'); 
+        return view('admin.bill',['codes'=>$codes]);
+    }
+
+    public function generate($code){
+        $bill = DB::select('select * from orders where order_ID = ? ',[$code]);
+        //DB::delete('delete from codes where code = ?',[$code]);
+        return view('admin.print_bill',['bill'=>$bill]);        
+    }
+
 }
