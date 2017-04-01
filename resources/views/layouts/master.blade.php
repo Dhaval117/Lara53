@@ -65,7 +65,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<li class="hvr-bounce-to-bottom"><a href="/home">Home</a></li>
 					<!--		<li class="hvr-bounce-to-bottom"><a href="/about">About</a></li>  -->
 							<li class="hvr-bounce-to-bottom"><a href="/menu">Menu</a></li>
-							<li class="hvr-bounce-to-bottom" onclick="check()"><a href="#">Cart</a></li>
+							<li class="hvr-bounce-to-bottom"><a href="/abc">Cart</a></li>
 							<li class="hvr-bounce-to-bottom"><a href="/myorder">MyOrder</a></li>
 				<!--		Login Registration and Logout	
 							<li class="hvr-bounce-to-bottom">
@@ -102,7 +102,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li><a href="/home">Home</a></li>
 					<li><a href="/menu">menu</a></li>						
 			<!--		<li><a href="/about">About</a></li>  -->
-					<li onclick="check()"><a>Cart</a></li>
+					<li><a href="/abc">Cart</a></li>
+					<li><a href="/myorder">MyOrder</a></li>
 				</ul>
 			</div>
 			<div class="col-md-3 ftr_navi ftr">

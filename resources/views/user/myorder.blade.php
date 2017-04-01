@@ -27,11 +27,24 @@ MyOrder
                         </tr>
                         <?php $amount = $amount + $item->Total; ?>
                     @endforeach
+                        <tr class="info">
+                        <td>Subtotal</td>
+                        <td></td>
+                        <td></td>
+                        <td>&#8377;{{$amount}}</td>
+                        </tr>
+                        <?php $tax = $amount * 0.10; ?> 
                         <tr class="success">
+                        <td>Tax</td>
+                        <td>10%</td>
+                        <td></td>
+                        <td>&#8377;{{$tax}}</td>
+                        </tr>
+                        <tr class="warning">
+                        <td>Total</td>
                         <td></td>
                         <td></td>
-                        <td></td>
-                        <td><b>&#8377;{{$amount}}</b></td>
+                        <td>&#8377;{{$amount + $tax}}</td>
                         </tr>
                 </tbody>
 			</table>

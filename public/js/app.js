@@ -22,6 +22,6 @@ function qty_show(m){
 }
 
 function check(){
-	var password = prompt("Please enter your code");
+	var password = prompt("Please ask waiter for 6 digit code");
 	redirector('/check/'+password);
 }
