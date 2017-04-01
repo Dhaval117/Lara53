@@ -1,100 +1,45 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <!DOCTYPE html>
 <html>
+
 <head>
 <title>@yield('title')</title>
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Delicacies Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
-		function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!-- //for-mobile-apps -->
+<!--Styles-->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/style_responsive.css" rel="stylesheet" type="text/css" media="all" />
-<!-- js -->
+<!-- Scripts-->
 <script src="js/jquery-1.11.1.min.js"></script>
-<!-- //js -->
-<!-- FlexSlider -->
-<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
-<script defer src="js/jquery.flexslider.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
-<script type="text/javascript">
-						$(window).load(function(){
-						  $('.flexslider').flexslider({
-							animation: "slide",
-							start: function(slider){
-							  $('body').removeClass('loading');
-							}
-						  });
-						});
-					  </script>
-<!-- //FlexSlider -->
-<link href='//fonts.googleapis.com/css?family=Play:400,700' rel='stylesheet' type='text/css'>
-<link href='//fonts.googleapis.com/css?family=Quicksand:400,300,700' rel='stylesheet' type='text/css'>
 </head>
-	
+
 <body>
-<!-- banner -->
-	<div class="banner">
-		<div class="container">
-			<div class="header-nav">
-				<nav class="navbar navbar-default">
-					<!-- Brand and toggle get grouped for better mobile display -->
-					<div class="navbar-header">
-					  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					  </button>
-						<div class="logo">
-							<a class="navbar-brand" href="/home">Delicacies <span>The Best Cake Bakery</span></a>
-						</div>
-					</div>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Delicious Bakery</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="hvr-bounce-to-bottom" ><a href="/home" style="color:white">Home</a></li>
+        <li class="hvr-bounce-to-bottom"><a href="/menu" style="color:white">Menu</a></li>
+		<li class="hvr-bounce-to-bottom"><a href="/abc" style="color:white">Cart</a></li>
+		<li class="hvr-bounce-to-bottom"><a href="/myorder" style="color:white">MyOrder</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-					<!-- Collect the nav links, forms, and other content for toggling -->
-					<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
-						<ul class="nav navbar-nav">
-							<li class="hvr-bounce-to-bottom"><a href="/home">Home</a></li>
-					<!--		<li class="hvr-bounce-to-bottom"><a href="/about">About</a></li>  -->
-							<li class="hvr-bounce-to-bottom"><a href="/menu">Menu</a></li>
-							<li class="hvr-bounce-to-bottom"><a href="/abc">Cart</a></li>
-							<li class="hvr-bounce-to-bottom"><a href="/myorder">MyOrder</a></li>
-				<!--		Login Registration and Logout	
-							<li class="hvr-bounce-to-bottom">
-								@if(Auth::check()) 
-								 <a href="{{ url('/logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Logout
-                                        </a>
 
-                                        <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-								@else
-								<a href="/login">Login/Register</a>
-								@endif
-							</li>   -->        
+@yield('content')
 
-						</ul>
-					</div><!-- /.navbar-collapse -->	
-				</nav>
-			</div>
-		</div>	
-	</div>		
-
-	@yield('content')
-	
-
-	<div class="footer">
+<div class="footer">
 		<div class="container">				 	
 			<div class="col-md-2 ftr_navi ftr">
 				<h3>Navigation</h3>
@@ -126,13 +71,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<div class="clearfix"> </div>
 		</div>
-	</div>
-<!-- //banner -->
-<!-- banner-bottom -->
-	
-<!--footer-->
-<!-- for bootstrap working -->
-		<script src="js/bootstrap.js"> </script>
+</div>
+
+<script src="js/bootstrap.js"> </script>
 		<script type="text/javascript">
 		$(document).on('click','.cartadd',function(){
 		//alert($(this).name);
@@ -206,3 +147,4 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //for bootstrap working -->
 </body>
 </html>
+

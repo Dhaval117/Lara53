@@ -5,6 +5,7 @@ Menu
 @endsection
 
 @section('content')
+<br/>
 <div class="menu">
 		<div class="container">
 			

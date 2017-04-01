@@ -1,11 +1,12 @@
 
-@extends('layouts.master')
+@extends('layouts.master2')
 
 @section('title')
 Menu 2
 @endsection
 
 @section('content')
+<br/>
 <div class="menu">
 		<div class="container">
 			<h3>Menu</h3>
