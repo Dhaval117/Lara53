@@ -1,9 +1,14 @@
-<html> 
-<head><title>Edit</title>
-<link rel="stylesheet" href="/css/form-basic.css">
-<link rel="stylesheet" href="/css/demo.css">
-</head> 
-<body> 
+@extends('layouts.app')
+
+@section('title')
+Update Item
+@endsection
+
+@section('styles')
+<link rel="stylesheet" href="../css/form-basic.css">
+@endsection
+ 
+@section('content') 
 <form  action="/edit/<?php echo $items[0]->Item_ID; ?>" method="post" class="form-basic"> 
  <div class="form-title-row">
                 <h1>Update Item</h1>
@@ -46,11 +51,4 @@
   </div>
  
 </form>
-<ul>
-        <li> <a href='/view-orders'>View Orders</a></li>
-        <li> <a href='/view-items'>View Items</a></li>
-        <li><a href='/insert'>Add Items</a></li>
-        <li><a href='/delete-items'>Delete Items</a></li>
-  </ul> 
-</body>  
-</html> 
+@endsection

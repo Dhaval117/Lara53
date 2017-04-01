@@ -1,13 +1,10 @@
-<html> 
-<head><title>Bill Generation</title>
-<!--<link rel="stylesheet" href="css/table.css">
-<link rel="stylesheet" href="css/form-basic.css"> -->
-<link rel="stylesheet" href="css/demo.css"> 
-<link rel="stylesheet" href="css/bootstrap.css">
-<script src="js/jquery-1.11.1.min.js"></script>
-<script src="js/bootstrap.js"></script>
-</head> 
-<body> 
+@extends('layouts.app')
+
+@section('title')
+Bill Generation
+@endsection
+ 
+@section('content')
 <div class="table-responsive">
 <table class="table table-striped"> 
 <thead>
@@ -28,5 +25,4 @@
 @endforeach
 </tbody> 
 </table> 
-</body>  
-</html>
+@endsection

@@ -11,14 +11,16 @@
     <title>@yield('title')</title>
 
     <!-- Styles -->
+    <link rel="stylesheet" href="css/bootstrap.css">
     <link href="/css/app.css" rel="stylesheet">
-
+    @yield('styles')
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([
             'csrfToken' => csrf_token(),
         ]); ?>
     </script>
+   
 </head>
 <body>
     <div id="app">
@@ -36,7 +38,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        Bakery
                     </a>
                 </div>
 
@@ -53,6 +55,47 @@
                             <li><a href="{{ url('/login') }}">Login</a></li>
                             <li><a href="{{ url('/register') }}">Register</a></li>
                         @else
+                         <!--   <li><a href="{{ url('/base') }}">Base</a></li>  -->
+                            <li><a href="{{ url('/bill') }}">Generate Bill</a></li>
+                            <li><a href="{{ url('/view-orders') }}">Orders</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                Codes <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="{{ url('/view-code') }}">
+                                            View Codes
+                                        </a>
+                                        <a href="{{ url('/code') }}">
+                                            Generate Codes
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                Items <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="{{ url('/insert') }}">
+                                            Add Items
+                                        </a>
+                                        <a href="{{ url('/view-items') }}">
+                                            View Items
+                                        </a>
+                                        <a href="{{ url('/edit-items') }}">
+                                            Update Items
+                                        </a>
+                                        <a href="{{ url('/delete-items') }}">
+                                            Delete Items
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -81,7 +124,10 @@
         @yield('content')
     </div>
 
-    <!-- Scripts -->
-    <script src="/js/app.js"></script>
+    <!-- Scripts 
+     <script src="js/jquery-1.11.1.min.js"></script>-->
+    <script src="js/bootstrap.js"></script> 
+    <script src="/js/app.js"></script>   
+    <script src="js/jquery-1.11.1.min.js"></script>
 </body>
 </html>

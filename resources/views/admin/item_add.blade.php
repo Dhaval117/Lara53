@@ -1,9 +1,14 @@
-<html> 
-<head><title>Add Items</title>
+@extends('layouts.app')
+
+@section('title')
+Insert Item
+@endsection
+
+@section('styles')
 <link rel="stylesheet" href="css/form-basic.css">
-<link rel="stylesheet" href="css/demo.css">
-</head> 
-<body> 
+@endsection
+ 
+@section('content') 
 <form action="/create" method="post" class="form-basic"> 
             <div class="form-title-row">
                 <h1>Insert new Item</h1>
@@ -45,6 +50,8 @@
                 <button type="submit">Insert Item</button>
   </div>
 </form> 
+@endsection
+<!--
   <ul>
         <li> <a href='/view-orders'>View Orders</a></li>
         <li> <a href='/view-items'>View Items</a></li>
@@ -52,4 +59,4 @@
         <li><a href='/delete-items'>Delete Items</a></li>
   </ul>
 </body>  
-</html> 
+</html> --> 

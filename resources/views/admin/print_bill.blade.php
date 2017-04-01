@@ -1,12 +1,20 @@
-<html> 
+<!--<html> 
 <head><title>Bill Generation</title>
 <link rel="stylesheet" href="../css/demo.css"> 
 <link rel="stylesheet" href="../css/bootstrap.css">
 <script src="../js/jquery-1.11.1.min.js"></script>
 <script src="../js/bootstrap.js"></script>
 </head> 
-<body> 
-<div class="container">
+<body>  
+-->
+@extends('layouts.app')
+
+@section('title')
+Print bill
+@endsection
+
+@section('content')
+<div class="container"> 
 <div class="table-responsive">
 <table class="table table-striped"> 
 <thead>
@@ -51,5 +59,4 @@
 </table> 
 </div>
 </div>
-</body>  
-</html>
+@endsection

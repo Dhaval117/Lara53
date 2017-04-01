@@ -1,13 +1,10 @@
-<html> 
-<head><title>View Items</title>
-<!--<link rel="stylesheet" href="css/table.css">
-<link rel="stylesheet" href="css/form-basic.css"> -->
-<link rel="stylesheet" href="css/demo.css"> 
-<link rel="stylesheet" href="css/bootstrap.css">
-<script src="js/jquery-1.11.1.min.js"></script>
-<script src="js/bootstrap.js"></script>
-</head> 
-<body> 
+@extends('layouts.app')
+
+@section('title')
+Items | View
+@endsection
+ 
+@section('content')
 <div class="table-responsive">
 <table class="table table-striped"> 
 <thead>
@@ -34,11 +31,4 @@
 </tbody> 
 </table> 
 </div>
-<ul>
-        <li> <a href='/view-orders'>View Orders</a></li>
-        <li><a href='/insert'>Add Items</a></li>
-        <li><a href='/edit-items'>Update Items</a></li>
-        <li><a href='/delete-items'>Delete Items</a></li>
-  </ul>
-</body>  
-</html> 
+@endsection
