@@ -135,7 +135,7 @@ class PageController extends Controller
 
     public function generate($code){
         $bill = DB::select('select * from orders where order_ID = ? ',[$code]);
-        //DB::delete('delete from codes where code = ?',[$code]);
+        DB::delete('delete from codes where code = ?',[$code]);
         return view('admin.print_bill',['bill'=>$bill]);        
     }
 
