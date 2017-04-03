@@ -14,7 +14,7 @@ Print bill
 @endsection
 
 @section('content')
-<div class="container"> 
+<div class="container" id="div_print"> 
 <div class="table-responsive">
 <table class="table table-striped"> 
 <thead>
@@ -59,4 +59,15 @@ Print bill
 </table> 
 </div>
 </div>
+
+<button id="print" onclick="printContent('div_print');" >Print</button>
+<script>
+function printContent(el){
+var restorepage = $('body').html();
+var printcontent = $('#' + el).clone();
+$('body').empty().html(printcontent);
+window.print();
+$('body').html(restorepage);
+}
+</script>
 @endsection
