@@ -62,15 +62,27 @@
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button id='register' type="submit" class="btn btn-primary disabled">
                                     Register
-                                </button>
+                                </button>                                
                             </div>
                         </div>
                     </form>
+                        
+                    <div class="col-md-6 col-md-offset-4">
+                        <button onclick="activate()" class="btn btn-primary">Activate Registration Button</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    function activate(){
+        var password = prompt('Enter activation code');
+        if(password == 'admin'){
+            $('#register').removeClass('disabled');
+        }
+    }
+</script>
 @endsection
