@@ -15,10 +15,11 @@ Print bill
 
 @section('content')
 <div class="container" id="div_print"> 
+<div class="pull-right"><b>Date: {{$bill[0]->created_at}}</b></div><br/>
 <div class="table-responsive">
 <table class="table table-striped"> 
 <thead>
-<tr class="success"> 
+<tr> 
  <th>Name</th>
  <th>Price</th> 
  <th>Quantity</th>
@@ -49,18 +50,19 @@ Print bill
                         <td></td>
                         <td>&#8377;{{$tax}}</td>
                         </tr>
-                        <tr class="warning">
+                        <tr class="danger">
                         <td>Total</td>
                         <td></td>
                         <td></td>
-                        <td>&#8377;{{$amount + $tax}}</td>
+                        <td><b>&#8377;{{$amount + $tax}}</b></td>
                         </tr>
 </tbody> 
 </table> 
 </div>
 </div>
-
-<button id="print" onclick="printContent('div_print');" >Print</button>
+<center>
+<button id="print" onclick="printContent('div_print');" class="btn btn-primary" >Print It</button>
+</center>
 <script>
 function printContent(el){
 var restorepage = $('body').html();
