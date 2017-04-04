@@ -17,7 +17,8 @@ class ItemsController extends Controller
 	  $ingredients = $request->input('item_ingredients');
 	  $description = $request->input('item_description');
 	  $availability = $request->input('availability');
-	  if(DB::insert('insert into items (Item_Name,Item_Price,Item_Ingredients,Item_Description,Availability) values(?,?,?,?,?)',[$name,$price,$ingredients,$description,$availability])) 
+    $category = $request->input('category');
+	  if(DB::insert('insert into items (Item_Name,Item_Price,Item_Ingredients,Item_Description,Availability,Category) values(?,?,?,?,?,?)',[$name,$price,$ingredients,$description,$availability,$category])) 
 	  {
         return redirect()->to('view-items');
     }else{
@@ -59,9 +60,10 @@ class ItemsController extends Controller
 	  	$ingredients = $request->input('item_ingredients');
 	  	$description = $request->input('item_description');
 	  	$availability = $request->input('availability');
-  		if(DB::update('update items set Item_Name = ?, Item_Price = ?,Item_Ingredients = ?,Item_Description = ?,Availability = ? where Item_ID = ?',[$name,$price,$ingredients,$description,$availability,$id])) 
+      $category = $request->input('category');
+  		if(DB::update('update items set Item_Name = ?, Item_Price = ?,Item_Ingredients = ?,Item_Description = ?,Availability = ?, Category =  ? where Item_ID = ?',[$name,$price,$ingredients,$description,$availability,$category,$id])) 
   		{
-          return redirect()->to('view-items');
+          return redirect()->to('edit-items');
       }else{
           echo "Item not Updated";
           echo "<p><a href='/edit-items'><button class='btn btn-success'>Try Again</button></a></p>";
@@ -82,7 +84,7 @@ class ItemsController extends Controller
     public function destroy($id){
     	if(DB::delete('delete from items where Item_ID = ?',[$id]))
       {
-        return redirect()->to('view-items');
+        return redirect()->to('delete-items');
       }else{
           echo 'Item not deleted';
           echo "<p><a href='/delete-items'><button class='btn btn-success'>Try Again</button></a></p>";

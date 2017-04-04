@@ -8,13 +8,14 @@ Items | View
 <div class="table-responsive">
 <table class="table table-striped"> 
 <thead>
-<tr> 
+<tr class="success"> 
  <th>ID</th> 
  <th>Name</th>
  <th>Price</th>
  <th>Ingredients</th>
  <th>Description</th>
  <th>Availability</th>
+ <th>Category</th>
 </tr> 
 </thead>
 <tbody>
@@ -26,6 +27,7 @@ Items | View
   <td>{{ $item->Item_Ingredients }}</td>
   <td>{{ $item->Item_Description }}</td>
   <td>{{ $item->Availability }}</td> 
+  <td>{{ $item->Category }}</td>
  </tr> 
 @endforeach
 </tbody> 

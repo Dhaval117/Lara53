@@ -27,10 +27,12 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li class="hvr-bounce-to-bottom" ><a href="/home" style="color:white">Home</a></li>
-        <li class="hvr-bounce-to-bottom"><a href="/menu" style="color:white">Menu</a></li>
+        <li class="hvr-bounce-to-bottom"><a href="snacks" style="color:white">Snacks</a></li>
+        <li class="hvr-bounce-to-bottom"><a href="pizza" style="color:white">Pizza</a></li>
+        <li class="hvr-bounce-to-bottom"><a href="chinese" style="color:white">Chinese</a></li>
 		<li class="hvr-bounce-to-bottom"><a href="/abc" style="color:white">Cart</a></li>
 		<li class="hvr-bounce-to-bottom"><a href="/myorder" style="color:white">MyOrder</a></li>
+		<li class="hvr-bounce-to-bottom"><a href="/play" style="color:white">Game</a></li>
       </ul>
     </div>
   </div>
@@ -44,11 +46,11 @@
 			<div class="col-md-2 ftr_navi ftr">
 				<h3>Navigation</h3>
 				<ul>
-					<li><a href="/home">Home</a></li>
-					<li><a href="/menu">menu</a></li>						
-			<!--		<li><a href="/about">About</a></li>  -->
-					<li><a href="/abc">Cart</a></li>
-					<li><a href="/myorder">MyOrder</a></li>
+					<li><a href="/snacks" style="color:white">Snacks</a></li>
+        			<li><a href="pizza" style="color:white">Pizza</a></li>
+        			<li><a href="chinese" style="color:white">Chinese</a></li>
+					<li><a href="/abc" style="color:white">Cart</a></li>
+					<li><a href="/myorder" style="color:white">MyOrder</a></li>
 				</ul>
 			</div>
 			<div class="col-md-3 ftr_navi ftr">

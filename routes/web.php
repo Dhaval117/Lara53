@@ -12,10 +12,12 @@
 */
 Auth::routes();
 
-Route::get('/', 'PageController@home');
-Route::get('/home', 'PageController@home');
-Route::get('/about', 'PageController@about');
-Route::get('/menu', 'PageController@menu');
+Route::get('/', 'PageController@snacks');
+Route::get('/home', 'PageController@snacks');
+Route::get('/menu','PageController@snacks');
+Route::get('/snacks', 'PageController@snacks');
+Route::get('/pizza', 'PageController@pizza');
+Route::get('/chinese', 'PageController@chinese');
 Route::post('/cart-add','PageController@cart_add');
 Route::get('/cart-update/{id}/{qty}','PageController@cart_update');
 Route::post('/cart-updater','PageController@cartUpdate');
@@ -24,6 +26,8 @@ Route::get('/order','PageController@order');
 Route::get('/check/{pwd?}','PageController@check');
 Route::get('/wrongpwd','PageController@wrongpwd');
 Route::get('/myorder','PageController@myorder');
+Route::get('/play','PageController@game');
+
 //Route::get('/logout', function () {
 //	Auth::logout();
   //  return view('home');

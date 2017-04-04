@@ -8,13 +8,14 @@ Items | Update
 <div class="table-responsive">
 <table class="table table-striped"> 
 <thead>
-<tr> 
+<tr class="success"> 
  <th>ID</th> 
  <th>Name</th>
  <th>Price</th>
  <th>Ingredients</th>
  <th>Description</th>
  <th>Availability</th>
+ <th>Category</th>
  <th>EDIT</th>
 </tr> 
 </thead>
@@ -26,7 +27,8 @@ Items | Update
   <td>{{ $item->Item_Price }}</td>
   <td>{{ $item->Item_Ingredients }}</td>
   <td>{{ $item->Item_Description }}</td>
-  <td>{{ $item->Availability }}</td> 
+  <td>{{ $item->Availability }}</td>
+  <td>{{ $item->Category }}</td>
   <td><a href='edit/{{ $item->Item_ID }}'>Edit</a></td> 
  </tr> 
 @endforeach 

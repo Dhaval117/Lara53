@@ -46,6 +46,16 @@ Update Item
                     <input type='text' name='availability' value='<?php echo $items[0]->Availability; ?>' pattern='[0-9]+' required/>
                 </label>
  </div>
+ <div class="form-row">
+                <label>
+                    <span>Category</span>
+                    <select type='dropdown' name='category' value='<?php echo $items[0]->Category; ?>' required>
+                        <option>Snacks</option>
+                        <option>Pizza</option>
+                        <option>Chinese</option>
+                    </select>
+                </label>
+ </div>
 <div class="form-row">
                 <button type="submit">Update Item</button>
   </div>

@@ -8,7 +8,7 @@ View Orders
 <div class="table-responsive">
 <table class="table table-striped"> 
 <thead>
-<tr> 
+<tr class="success"> 
  <th>ID</th> 
  <th>Name</th>
  <th>Price</th>

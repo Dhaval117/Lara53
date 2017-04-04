@@ -44,7 +44,18 @@ Insert Item
                     <span>Availability</span>
                     <input type='text' name='availability' pattern='[0-9]+' required/>
                 </label>
- </div>
+                </div>
+                <div class="form-row">
+                <label>
+                    <span>Category</span>
+                    <select type='dropdown' name='category' required>
+                        <option>Snacks</option>
+                        <option>Pizza</option>
+                        <option>Chinese</option>
+                    </select> 
+                </label>
+                </div>         
+ 
  
   <div class="form-row">
                 <button type="submit">Insert Item</button>

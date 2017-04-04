@@ -18,7 +18,7 @@ Menu
 			<div class="menu-grids">
 				<div class="col-md-4 menu-grid">
 					<div class="menu-grd">
-						<img src="<?php echo'images/'.$item->Item_Name.'.jpg' ?>" alt=" {{$item->Item_Name}}" class="img-responsive set-img" />
+						<img src="<?php echo'images/'.$item->Item_Name.'.jpg' ?>" alt=" {{$item->Item_Name}}" class="set-img" />
 						<h4>{{$item->Item_Name}}</h4>
 						<p>{{$item->Item_Description}}</p>
 						<div class="menu-grd-pos">
@@ -29,9 +29,9 @@ Menu
 			<!--data-id="{{$item->Item_ID}}" data-name="{{$item->Item_Name}}" data-price="{{$item->Item_Price}}"-->			
 						<button class="btn btn-success cartadd" data-id="{{$item->Item_ID}}" data-name="{{$item->Item_Name}}" data-price="{{$item->Item_Price}}">Add</button>
 						</div>
-						<div class="col-xs-2"></div>
-						<div class="col-xs-7">
-							<input class="qty" style="display:none ; width:50px"  type="number" min="0" value="1" max="{{$item->Availability}}">
+						<div class="col-xs-6"></div>
+						<div class="col-xs-3">
+							<span style="font-size:24px">&#8377;{{$item->Item_Price}}</span>
 						</div>
 						</div>
 					</div>

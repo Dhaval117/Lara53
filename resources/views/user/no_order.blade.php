@@ -43,7 +43,7 @@
             <div class="content">
                 <div class="title">You have not ordered anything</div>
             </div><br />
-            <button class="btn btn-primary " style="float:center" onclick="redirector('/menu')">Go Back</button>
+            <button class="btn btn-primary btn-lg" style="float:center; font-size:48px" onclick="redirector('/menu')">Go Back</button>
         </div>
     </body>
 </html>

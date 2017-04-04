@@ -22,6 +22,21 @@ class PageController extends Controller
         return view('user.menu',['items'=>$items]);
     }
 
+    public function snacks(){
+        $items = DB::select('select * from items where Availability > 5 and Category = "Snacks" '); 
+        return view('user.menu',['items'=>$items]);
+    }
+
+    public function pizza(){
+        $items = DB::select('select * from items where Availability > 5 and Category = "Pizza" '); 
+        return view('user.menu',['items'=>$items]);
+    }
+
+    public function chinese(){
+        $items = DB::select('select * from items where Availability > 5 and Category = "Chinese" '); 
+        return view('user.menu',['items'=>$items]);
+    }
+
     public function admin(){
         return view('auth.login');
     }
@@ -30,6 +45,10 @@ class PageController extends Controller
         return view('admin.base');
     }
 
+    public function game(){
+        return view('user.game');
+    }
+    
     public function menu2(){
         $items = DB::select('select * from items'); 
         return view('user.menu2',['items'=>$items]);
