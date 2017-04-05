@@ -18,7 +18,7 @@ Menu
 			<div class="menu-grids">
 				<div class="col-md-4 menu-grid">
 					<div class="menu-grd">
-						<img src="<?php echo'images/'.$item->Item_Name.'.jpg' ?>" alt=" {{$item->Item_Name}}" class="set-img" />
+						<img src="<?php echo'images/'.$item->Item_Name.'.jpg' ?>" alt=" {{$item->Item_Name}}" class="set-img"/>
 						<h4>{{$item->Item_Name}}</h4>
 						<p>{{$item->Item_Description}}</p>
 						<div class="menu-grd-pos">
