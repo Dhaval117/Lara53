@@ -65,6 +65,17 @@ class PageController extends Controller
         }
     }
 
+    public function analysis(){
+        $date = date("Y-m-d");
+        $items = DB::select('SELECT Item_Name,SUM(Quantity) as SOLD
+        FROM orders
+        WHERE DATE(created_at) = ?
+        GROUP BY Item_Name
+        ORDER BY SOLD DESC
+        LIMIT 5',['2017-04-04']);
+        return view('admin.analysis',['items'=>$items]);
+    }
+
     public function wrongpwd(){
         return view('user.wpwd');
     }
@@ -78,13 +89,7 @@ class PageController extends Controller
             return view('user.no_order');
         }
     }
-  /*  public function cart_add($id){
-       $item = DB::select('select * from items where Item_ID = ?',[$id]);
-       $name = $item[0]->Item_Name;
-       $price = $item[0]->Item_Price;
-       $quantity = 1;
-       DB::insert('insert into carts (Item_Name,Item_Price,Item_Quantity) values(?,?,?)',[$name,$price,$quantity]);
-    } */
+  
 
     public function cart_add(Request $req){
 
@@ -135,13 +140,6 @@ class PageController extends Controller
         return redirect()->to('/myorder');
     }
 
-    public function code(){
-     //   Code::getQuery()->delete();
-       // DB::table('codes')->truncate();
-      //  Artisan::call('db:seed');
-       // return redirect()->to('/view-code');
-    }
-
     public function showcode(){
         $codes = DB::select('select * from codes'); 
         return view('admin.code_view',['codes'=>$codes]);
@@ -158,4 +156,19 @@ class PageController extends Controller
         return view('admin.print_bill',['bill'=>$bill]);        
     }
 
+
 }
+/*  public function cart_add($id){
+       $item = DB::select('select * from items where Item_ID = ?',[$id]);
+       $name = $item[0]->Item_Name;
+       $price = $item[0]->Item_Price;
+       $quantity = 1;
+       DB::insert('insert into carts (Item_Name,Item_Price,Item_Quantity) values(?,?,?)',[$name,$price,$quantity]);
+    } */
+
+/*    public function code(){
+     //   Code::getQuery()->delete();
+       // DB::table('codes')->truncate();
+      //  Artisan::call('db:seed');
+       // return redirect()->to('/view-code');
+    } */

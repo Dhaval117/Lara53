@@ -56,6 +56,7 @@
                             <li><a href="{{ url('/register') }}">Register</a></li>
                         @else
                          <!--   <li><a href="{{ url('/base') }}">Base</a></li>  -->
+                            <li><a href="{{ url('/analysis') }}">Report</a></li>
                             <li><a href="{{ url('/bill') }}">Generate Bill</a></li>
                             <li><a href="{{ url('/view-orders') }}">Orders</a></li>
                             <li class="dropdown">
