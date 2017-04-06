@@ -138,7 +138,7 @@ div#container {
 }
 /*-- area_chart --*/
 .area_chart_left{
-	float:left;
+	float:center;
 	width:42%;
 	padding:2em;
 	background:#fff;
