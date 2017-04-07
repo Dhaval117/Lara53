@@ -2,7 +2,7 @@
 
 
 @section('styles')
-<link href="chart/css/style3.css" rel="stylesheet" type="text/css" media="all" />
+<link href="chart/css/style.css" rel="stylesheet" type="text/css" media="all" />
 <script src="chart/js/Chart.js"></script>
 @endsection
 
