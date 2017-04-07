@@ -22,7 +22,7 @@ function qty_show(m){
 }
 
 function check(){
-	var password = prompt("Please ask waiter for 6 digit code");
-	if(password != '' && password != null)
-		redirector('/check/'+password);
+	//var password = prompt("Please ask waiter for 6 digit code");
+	//if(password != '' && password != null)
+	//	redirector('/check/'+password);
 }

@@ -24,10 +24,11 @@ Route::post('/cart-updater','CartController@cartUpdate');
 Route::get('/abc','PageController@abc');
 Route::get('/order','OrderController@order');
 Route::get('/check/{pwd?}','OrderController@check');
+Route::get('/check-code','OrderController@check_code');
 Route::get('/wrongpwd','PageController@wrongpwd');
 Route::get('/myorder','PageController@myorder');
 Route::get('/play','PageController@game');
-
+Route::get('/end-session','OrderController@endsession');
 //Route::get('/logout', function () {
 //	Auth::logout();
   //  return view('home');

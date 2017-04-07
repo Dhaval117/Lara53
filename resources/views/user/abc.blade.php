@@ -48,7 +48,7 @@ Cart
                         <td></td>
                         <td></td>
                         <td>&#8377;<span id="cart-total">{{Cart::total()}}</span></td>
-                        <td><button class="btn btn-success" onclick="check()">Order</button></td>
+                        <td><button class="btn btn-success" onclick="redirector('/check-code')">Order</button></td>
                         </tr>
                 </tbody>
 			</table>     

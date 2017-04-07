@@ -57,7 +57,7 @@ class PageController extends Controller
     public function check($code='aaa'){
         if(DB::select('select * from codes where code = ? ',[$code])) {
             session(['pwd'=>$code]);
-            session(['opwd'=>$code]); 
+           // session(['opwd'=>$code]); 
             return redirect()->to('/order');
         }
         else{
@@ -81,8 +81,8 @@ class PageController extends Controller
     }
 
     public function myorder(){
-        if(session('opwd')){
-            $code = session('opwd');
+        if(session('pwd')){
+            $code = session('pwd');
             $order = DB::select('select * from orders where order_ID = ?' ,[$code]);
             return view('user.myorder',['order'=>$order]);
         }else{

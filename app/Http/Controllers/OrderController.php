@@ -16,7 +16,7 @@ class OrderController extends Controller
         DB::update("update items set Availability = (Availability - $row->qty) where Item_Name = ?",[$row->name]);
         }
         Cart::destroy();
-        session()->forget('pwd');
+        //session()->forget('pwd');
         return redirect()->to('/myorder');
     }
 
@@ -29,11 +29,32 @@ class OrderController extends Controller
     public function check($code='aaa'){
         if(DB::select('select * from codes where code = ? ',[$code])) {
             session(['pwd'=>$code]);
-            session(['opwd'=>$code]); 
+          //  session(['opwd'=>$code]); 
             return redirect()->to('/order');
         }
         else{
             return redirect()->to('/wrongpwd');
         }
+    }
+
+    public function check_code(){
+        if(session('pwd')){
+            $password = session('pwd');
+            return redirect()->to('/check/'.$password);
+        }else{
+            echo ' <script type="text/javascript">
+                var password = prompt("Please ask waiter for 6 digit code");
+                if(password != "" && password != null)
+                    window.open("/check/"+password,"_self");
+                else
+                    window.open("/abc","_self");
+                </script>
+            ';
+        }
+    }
+
+    public function endsession(){
+        session()->forget('pwd');
+        return redirect()->to('/menu');
     }
 }
