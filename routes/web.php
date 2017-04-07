@@ -45,16 +45,16 @@ Route::get('/bill','PageController@bill')->middleware('AuthCheck');
 Route::get('/generate/{code}','OrderController@generate')->middleware('AuthCheck');
 Route::get('/analysis','PageController@analysis')->middleware('AuthCheck');
 Route::get('/insert','ItemsController@insertform')->middleware('AuthCheck');
-Route::post('create','ItemsController@insert')->middleware('AuthCheck');
+Route::post('/create','ItemsController@insert')->middleware('AuthCheck');
 
-Route::get('view-items','ItemsController@index')->middleware('AuthCheck');
-Route::get('view-orders','ItemsController@orders')->middleware('AuthCheck');
-Route::get('edit-items','ItemsController@editform')->middleware('AuthCheck'); 
-Route::get('edit/{id}','ItemsController@newval')->middleware('AuthCheck'); 
-Route::post('edit/{id}','ItemsController@edit')->middleware('AuthCheck'); 
+Route::get('/view-items','ItemsController@index')->middleware('AuthCheck');
+Route::get('/view-orders','ItemsController@orders')->middleware('AuthCheck');
+Route::get('/edit-items','ItemsController@editform')->middleware('AuthCheck'); 
+Route::get('/edit/{id}','ItemsController@newval')->middleware('AuthCheck'); 
+Route::post('/edit/{id}','ItemsController@edit')->middleware('AuthCheck'); 
 
-Route::get('delete-items','ItemsController@deleteform')->middleware('AuthCheck'); 
-Route::get('delete/{id}','ItemsController@destroy')->middleware('AuthCheck');
+Route::get('/delete-items','ItemsController@deleteform')->middleware('AuthCheck'); 
+Route::get('/delete/{id}','ItemsController@destroy')->middleware('AuthCheck');
 
 //Route::get('/home', 'HomeController@index');
 //Route::get('/practice','PageController@menu2');
