@@ -41,9 +41,10 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Your Password is incorrect</div>
+                <div class="title">Incorrect Password or Previous Login</div>
             </div><br />
             <button class="btn btn-primary " style="float:center;font-size:48px" onclick="redirector('/abc')">Go Back</button>
+            <button class="btn btn-primary " style="float:center;font-size:48px" onclick="redirector('/end-session')">Logout</button>
         </div>
     </body>
 </html>

@@ -33,9 +33,9 @@
 		<li class="hvr-bounce-to-bottom"><a href="/abc" style="color:white">Cart</a></li>
 		<li class="hvr-bounce-to-bottom"><a href="/myorder" style="color:white">MyOrder</a></li>
 		<li class="hvr-bounce-to-bottom"><a href="/play" style="color:white">Game</a></li>
-		@if(session('pwd'))
+	<!--	@if(session('pwd'))
 		<li class="hvr-bounce-to-bottom"><a href="/end-session" style="color:white">Logout</a></li>
-		@endif
+		@endif  -->
       </ul>
     </div>
   </div>
