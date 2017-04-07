@@ -11,7 +11,7 @@
     <title>@yield('title')</title>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
     <link href="/css/app.css" rel="stylesheet">
     @yield('styles')
     <!-- Scripts -->
@@ -127,8 +127,8 @@
 
     <!-- Scripts 
      <script src="js/jquery-1.11.1.min.js"></script>-->
-    <script src="js/bootstrap.js"></script> 
+    <script src="/js/bootstrap.js"></script> 
     <script src="/js/app.js"></script>   
-    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="/js/jquery-1.11.1.min.js"></script>
 </body>
 </html>

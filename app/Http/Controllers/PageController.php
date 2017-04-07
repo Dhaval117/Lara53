@@ -83,7 +83,7 @@ class PageController extends Controller
     public function myorder(){
         if(session('opwd')){
             $code = session('opwd');
-            $order = DB::select('select * from orders where order_ID = ? ',[$code]);
+            $order = DB::select('select * from orders where order_ID = ?' ,[$code]);
             return view('user.myorder',['order'=>$order]);
         }else{
             return view('user.no_order');

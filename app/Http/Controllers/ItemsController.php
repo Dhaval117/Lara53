@@ -33,17 +33,17 @@ class ItemsController extends Controller
     }
 
     public function index(){
-    	$items = DB::select('select * from items'); 
+    	$items = DB::select('select * from items order by Category'); 
   		return view('admin.item_view',['items'=>$items]);
     }
 
     public function editform(){ 
-  		$items = DB::select('select * from items'); 
+  		$items = DB::select('select * from items order by Category'); 
   		return view('admin.item_edit',['items'=>$items]); 	
  	  }
 
     public function orders(){
-      $orders = DB::select('select * from orders'); 
+      $orders = DB::select('select * from orders order by created_at DESC' ); 
       return view('admin.order_view',['orders'=>$orders]);
     }
   
@@ -77,7 +77,7 @@ class ItemsController extends Controller
     }
 
     public function deleteform(){
-    	$items = DB::select('select * from items'); 
+    	$items = DB::select('select * from items order by Category'); 
   		return view('admin.item_delete',['items'=>$items]);
     }
 

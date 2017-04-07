@@ -15,7 +15,8 @@ Print bill
 
 @section('content')
 <div class="container" id="div_print"> 
-<div class="pull-right"><b>Date: {{$bill[0]->created_at}}</b></div><br/>
+<?php if($bill){ ?>
+<div class="pull-right"><b>Date: {{$bill[0]->created_at}}</b> </div><br/> <?php } ?>
 <div class="table-responsive">
 <table class="table table-striped"> 
 <thead>
