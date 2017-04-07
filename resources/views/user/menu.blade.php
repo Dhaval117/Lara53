@@ -54,6 +54,7 @@ Menu
         <div class="modal-content">    
     	    <div class="modal-body">
             <h2>Added to cart</h2>
+            <button class="btn btn-primary" onclick="redirector('/abc')">Go to Cart</button>
             </div>
         </div>
     </div>
