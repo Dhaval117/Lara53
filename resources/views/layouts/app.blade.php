@@ -58,7 +58,23 @@
                          <!--   <li><a href="{{ url('/base') }}">Base</a></li>  -->
                             <li><a href="{{ url('/analysis') }}">Report</a></li>
                             <li><a href="{{ url('/bill') }}">Generate Bill</a></li>
-                            <li><a href="{{ url('/view-orders') }}">Orders</a></li>
+                            
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                Orders <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="{{ url('/view-orders') }}">
+                                            View Orders
+                                        </a>
+                                        <a href="{{ url('/download') }}">
+                                            Export to Excel
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                 Codes <span class="caret"></span>

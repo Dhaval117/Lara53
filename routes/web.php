@@ -29,6 +29,7 @@ Route::get('/wrongpwd','PageController@wrongpwd');
 Route::get('/myorder','PageController@myorder');
 Route::get('/play','PageController@game');
 Route::get('/end-session','OrderController@endsession');
+Route::get('/download','OrderController@download');
 //Route::get('/logout', function () {
 //	Auth::logout();
   //  return view('home');

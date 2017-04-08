@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use Cart;
+use Response;
 
 class OrderController extends Controller
 {
@@ -56,5 +57,29 @@ class OrderController extends Controller
     public function endsession(){
         session()->forget('pwd');
         return redirect()->to('/menu');
+    }
+
+    public function download(Request $request){
+        $orders = DB::select('select * from orders');
+        if(count($orders)){
+            $id = 1;
+            $data[] ="id,Order_ID,Item_Name,Item_Price,Quantity,Total,created_at";
+            foreach ($orders as $value) {
+                $data[] = $id.','.$value->Order_ID.','.$value->Item_Name.','.$value
+                ->Item_Price.','.$value->Quantity.','.$value->Total.','.$value->created_at;
+                $id++;
+            }
+            $filename = "order.csv";
+            $filepath = 'C:/Users/Hp/Desktop/'.$filename;
+            $file = fopen($filepath, "w");
+
+            foreach ($data as $output) {
+                fputcsv($file,explode(',',$output));
+            }
+            fclose($file);
+
+            $headers = ['Content-Type'=>'application/csv'];
+            return response()->download($filepath,$filename,$headers);
+        }
     }
 }
