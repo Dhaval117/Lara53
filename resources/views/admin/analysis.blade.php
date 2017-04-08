@@ -32,58 +32,36 @@ Top 5 Items
 
 <center>
 <div class="area_chart pie_chart">
-			<div class="area_chart_left">
-				<div class="area_chart_left_main">
-					<div class="area_chart_left_l">
-						<h3>PIE CHART</h3>
-					</div>
-					<div class="area_chart_left_r">
-						<ul>
-							<li >{{$items[0]->Item_Name}}(Red)</li>
-							<li >{{$items[1]->Item_Name}}(Blue)</li>
-							<li >{{$items[2]->Item_Name}}(Green)</li>
-							<li >{{$items[3]->Item_Name}}(Yellow)</li>
-							<li >{{$items[4]->Item_Name}}(Orange)</li>
-						</ul>
-					</div>
-					<div class="clear"> </div>
-				</div>
-				<canvas id="pie" height="300" width="500" style="width: 500px; height: 300px;"></canvas>
-				 <script>
+	<div class="area_chart_left">
+		<div class="area_chart_left_main">
+			<div class="area_chart_left_l">
+				<h3>PIE CHART</h3>
+			</div>
+			<div class="area_chart_left_r">
+				<ul>
+					<?php $i=0; $color = array('red','blue','green','purple','orange'); ?>
+					@foreach($items as $item)
+						<li style="color:{{$color[$i++]}}">{{$item->Item_Name}}</li>
+					@endforeach
+				</ul>
+			</div>
+			<div class="clear"> </div>
+		</div>
+			<canvas id="pie" height="300" width="500" style="width: 500px; height: 300px;"></canvas>
+				 <script type="text/javascript">
 					var pieData = [
+						<?php $j=0; ?>
+							@foreach($items as $item)
 							{
-								value: {{$items[0]->SOLD}},
-								color: "red"
+								value: {{$item->SOLD}},
+								color: "{{$color[$j++]}}",
 							},
-							{
-								value : {{$items[1]->SOLD}},
-								color : "blue"
-							},
-							{
-								value : {{$items[2]->SOLD}},
-								color : "green"
-							},
-							{
-								value : {{$items[3]->SOLD}},
-								color : "yellow"
-							},
-							{
-								value : {{$items[4]->SOLD}},
-								color : "orange"
-							}
-						/*	{
-								value : {{$items[3]->SOLD}},
-								color : green
-							},
-							{
-								value : {{$items[4]->SOLD}},
-								color : red
-							}*/
-						
+							@endforeach
+							
 						];
 						new Chart(document.getElementById("pie").getContext("2d")).Pie(pieData);
 				</script>
-			</div>
-
+	</div>
+</div>
 </center>
 @endsection

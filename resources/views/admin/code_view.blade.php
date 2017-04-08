@@ -5,7 +5,7 @@ User Codes
 @endsection
  
 @section('content')
-<div class="table-responsive">
+<div class="table-responsive" style="font-family:courier">
 <table class="table table-striped"> 
 <thead>
 <tr> 

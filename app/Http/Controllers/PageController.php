@@ -72,7 +72,7 @@ class PageController extends Controller
         WHERE DATE(created_at) = ?
         GROUP BY Item_Name
         ORDER BY SOLD DESC
-        LIMIT 5',['2017-04-04']);
+        LIMIT 5',[$date]);
         return view('admin.analysis',['items'=>$items]);
     }
 
