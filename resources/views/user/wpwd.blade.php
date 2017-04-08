@@ -44,7 +44,9 @@
                 <div class="title">Incorrect Password or Previous Login</div>
             </div><br />
             <button class="btn btn-primary " style="float:center;font-size:48px" onclick="redirector('/abc')">Go Back</button>
+            @if(session('pwd'))
             <button class="btn btn-primary " style="float:center;font-size:48px" onclick="redirector('/end-session')">Logout</button>
+            @endif
         </div>
     </body>
 </html>
