@@ -23,7 +23,7 @@ View Orders
   <td>{{ $order->Item_Name }}</td>
   <td>{{ $order->Item_Price }}</td>
   <td>{{ $order->Quantity }}</td>
-  <td>{{ $order->created_at }}</td> 
+  <td>{{ $order->created_at }}</td>
  </tr> 
 @endforeach
 </tbody> 
