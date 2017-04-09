@@ -5,7 +5,7 @@ Update Item
 @endsection
 
 @section('styles')
-<link rel="stylesheet" href="../css/form-basic.css">
+<link rel="stylesheet" href="/css/form-basic.css">
 @endsection
  
 @section('content') 
@@ -49,10 +49,10 @@ Update Item
  <div class="form-row">
                 <label>
                     <span>Category</span>
-                    <select type='dropdown' name='category' value='<?php echo $items[0]->Category; ?>' required>
+                    <select type='dropdown' name='category' value="{{$items[0]->Category}}" required>
                         <option>Snacks</option>
-                        <option>Pizza</option>
-                        <option>Chinese</option>
+                        <option <?php if($items[0]->Category == 'Pizza'){ echo 'selected';}?>>Pizza</option>
+                        <option <?php if($items[0]->Category == 'Chinese'){ echo 'selected';}?>>Chinese</option>
                     </select>
                 </label>
  </div>

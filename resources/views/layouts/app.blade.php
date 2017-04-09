@@ -146,37 +146,10 @@
     <script src="/js/bootstrap.js"></script> 
     <script src="/js/app.js"></script>   
     <script src="/js/jquery-1.11.1.min.js"></script>
-  <!--  <script type="text/javascript">
-$(document).on('change','.availability',function(){
-            //alert('cache');
-            alert('working');
-        /* if( $(this).val() >= 0){
-                $.ajax({
-                    cache: 'false',
-                    type: 'post',
-                    data: {
-                        '_token': $('input[name=_token]').val(),
-                        'qty': $(this).val(),
-                        'msg': "availability",  
-                        'id' : $(this).data('id'),
-                    },
-                    dataType: 'json',
-                    url: '/edit/'+$(this).data('id'),
-                    success: function(data){
-                    
-                    //alert($('#cart-total').text());
-                        $('#item'+data.id).html(data.quantity);
-                        alert($('#item'+data.id).html());
-                    }
-                });
-            }
-        }); */
-</script>
--->
-<script type="text/javascript">
-$(document).on('change','.availability',function(){
-       // alert('value changed');    
-    if( $(this).val() >= 0){
+    <script type="text/javascript">
+        $(document).on('change','.availability',function(){
+        // alert('value changed');    
+        if( $(this).val() >= 0){
                 $.ajax({
                     cache: 'false',
                     type: 'post',
@@ -194,7 +167,7 @@ $(document).on('change','.availability',function(){
                     }
                 });
             }
-});
-</script>
+        });
+    </script>
 </body>
 </html>
