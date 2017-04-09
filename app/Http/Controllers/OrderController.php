@@ -9,6 +9,12 @@ use Response;
 
 class OrderController extends Controller
 {
+    public function view_orders(){
+      $date = date('Y-m-d');
+      $orders = DB::select('select * from orders where DATE(created_at) = ? order by created_at DESC',[$date]); 
+      return view('admin.order_view',['orders'=>$orders]);
+    }
+
     public function order(){
         $content = Cart::content();
         $order_id = session('pwd');
@@ -21,7 +27,7 @@ class OrderController extends Controller
         return redirect()->to('/myorder');
     }
 
-    public function generate($code){
+    public function generate_bill($code){
         $bill = DB::select('select * from orders where order_ID = ? ',[$code]);
         DB::delete('delete from codes where code = ?',[$code]);
         return view('admin.print_bill',['bill'=>$bill]);        
@@ -59,7 +65,18 @@ class OrderController extends Controller
         return redirect()->to('/menu');
     }
 
-    public function download(Request $request){
+    public function analysis(){
+        $date = date("Y-m-d");
+        $items = DB::select('SELECT Item_Name,SUM(Quantity) as SOLD
+        FROM orders
+        WHERE DATE(created_at) = ?
+        GROUP BY Item_Name
+        ORDER BY SOLD DESC
+        LIMIT 5',[$date]);
+        return view('admin.analysis',['items'=>$items]);
+    }
+
+    public function export(Request $request){
         $orders = DB::select('select * from orders');
         if(count($orders)){
             $id = 1;

@@ -43,7 +43,8 @@ class ItemsController extends Controller
  	  }
 
     public function orders(){
-      $orders = DB::select('select * from orders order by created_at DESC' ); 
+      $date = date('Y-m-d');
+      $orders = DB::select('select * from orders where DATE(created_at) = ? order by created_at DESC',[$date]); 
       return view('admin.order_view',['orders'=>$orders]);
     }
   

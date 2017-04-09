@@ -22,19 +22,19 @@ Route::post('/cart-add','CartController@cart_add');
 Route::get('/cart-update/{id}/{qty}','CartController@cart_update');
 Route::post('/cart-updater','CartController@cartUpdate');
 Route::get('/abc','PageController@abc');
-Route::get('/order','OrderController@order');
-Route::get('/check/{pwd?}','OrderController@check');
-Route::get('/check-code','OrderController@check_code');
 Route::get('/wrongpwd','PageController@wrongpwd');
 Route::get('/myorder','PageController@myorder');
 Route::get('/play','PageController@game');
+
+Route::get('/order','OrderController@order');
+Route::get('/check/{pwd?}','OrderController@check');
+Route::get('/check-code','OrderController@check_code');
 Route::get('/end-session','OrderController@endsession');
-Route::get('/download','OrderController@download');
 //Route::get('/logout', function () {
 //	Auth::logout();
   //  return view('home');
 //});
-Route::get('/code',function(){
+Route::get('/generate-code',function(){
 		App\Code::getQuery()->delete();
        // DB::table('codes')->truncate();
         Artisan::call('db:seed');
@@ -44,13 +44,16 @@ Route::get('/view-code','PageController@showcode')->middleware('AuthCheck');
 Route::get('/admin','PageController@admin');
 Route::get('/base','PageController@base')->middleware('AuthCheck');
 Route::get('/bill','PageController@bill')->middleware('AuthCheck');
-Route::get('/generate/{code}','OrderController@generate')->middleware('AuthCheck');
-Route::get('/analysis','PageController@analysis')->middleware('AuthCheck');
+
+Route::get('/generate-bill/{code}','OrderController@generate_bill')->middleware('AuthCheck');
+Route::get('/view-orders','OrderController@view_orders')->middleware('AuthCheck');
+Route::get('/analysis','OrderController@analysis')->middleware('AuthCheck');
+Route::get('/export','OrderController@export')->middleware('AuthCheck');
+
 Route::get('/insert','ItemsController@insertform')->middleware('AuthCheck');
 Route::post('/create','ItemsController@insert')->middleware('AuthCheck');
 
 Route::get('/view-items','ItemsController@index')->middleware('AuthCheck');
-Route::get('/view-orders','ItemsController@orders')->middleware('AuthCheck');
 Route::get('/edit-items','ItemsController@editform')->middleware('AuthCheck'); 
 Route::get('/edit/{id}','ItemsController@newval')->middleware('AuthCheck'); 
 Route::post('/edit/{id}','ItemsController@edit')->middleware('AuthCheck'); 

@@ -68,7 +68,7 @@
                                         <a href="{{ url('/view-orders') }}">
                                             View Orders
                                         </a>
-                                        <a href="{{ url('/download') }}">
+                                        <a href="{{ url('/export') }}">
                                             Export to Excel
                                         </a>
                                     </li>
@@ -84,7 +84,7 @@
                                         <a href="{{ url('/view-code') }}">
                                             View Codes
                                         </a>
-                                        <a href="{{ url('/code') }}">
+                                        <a href="{{ url('/generate-code') }}">
                                             Generate Codes
                                         </a>
                                     </li>

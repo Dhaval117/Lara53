@@ -20,7 +20,7 @@ Bill Generation
  <tr> 
   <td>{{ $i++}} </td>
   <td>{{ $code->code }}</td>
-  <td><a href="/generate/{{$code->code}}" class="btn btn-primary">Generate Bill</a></td>  
+  <td><a href="/generate-bill/{{$code->code}}" class="btn btn-primary">Generate Bill</a></td>  
  </tr> 
 @endforeach
 </tbody> 
