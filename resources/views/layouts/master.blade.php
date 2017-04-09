@@ -46,7 +46,7 @@
 
 <div class="footer">
 		<div class="container">				 	
-			<div class="col-md-2 ftr_navi ftr">
+		<!--<div class="col-md-2 ftr_navi ftr">
 				<h3>Navigation</h3>
 				<ul>
 					<li><a href="/snacks" style="color:white">Snacks</a></li>
@@ -54,9 +54,10 @@
         			<li><a href="/chinese" style="color:white">Chinese</a></li>
 					<li><a href="/abc" style="color:white">Cart</a></li>
 					<li><a href="/myorder" style="color:white">MyOrder</a></li>
+					<li><a href="/play" style="color:white">Game</a></li>
 				</ul>
-			</div>
-			<div class="col-md-3 ftr_navi ftr">
+			</div> -->
+			<div class="col-md-4 ftr_navi ftr">
 					 <h3>Developers</h3>
 					 <ul>
 						 <li><a href="#">Dhaval Bhensdadiya</a></li>
@@ -65,7 +66,7 @@
 						 <li><a href="#">Mihir Trivedi</a></li>
 					 </ul>
 			</div>
-			<div class="col-md-3 get_in_touch ftr">
+			<div class="col-md-4 get_in_touch ftr">
 				<h3>Get In Touch</h3>
 				<a href="www.wicon.co.in">www.wicon.co.in</a>
 			</div>

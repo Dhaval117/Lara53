@@ -47,7 +47,10 @@ Route::get('/bill','PageController@bill')->middleware('AuthCheck');
 
 Route::get('/generate-bill/{code}','OrderController@generate_bill')->middleware('AuthCheck');
 Route::get('/view-orders','OrderController@view_orders')->middleware('AuthCheck');
-Route::get('/analysis','OrderController@analysis')->middleware('AuthCheck');
+Route::get('/today-analysis','OrderController@today_analysis')->middleware('AuthCheck');
+Route::get('/weekly-analysis','OrderController@weekly_analysis')->middleware('AuthCheck');
+Route::get('/monthly-analysis','OrderController@monthly_analysis')->middleware('AuthCheck');
+Route::get('/total-analysis','OrderController@total_analysis')->middleware('AuthCheck');
 Route::get('/export','OrderController@export')->middleware('AuthCheck');
 
 Route::get('/insert','ItemsController@insertform')->middleware('AuthCheck');

@@ -65,7 +65,7 @@ class OrderController extends Controller
         return redirect()->to('/menu');
     }
 
-    public function analysis(){
+    public function today_analysis(){
         $date = date("Y-m-d");
         $items = DB::select('SELECT Item_Name,SUM(Quantity) as SOLD
         FROM orders
@@ -73,6 +73,39 @@ class OrderController extends Controller
         GROUP BY Item_Name
         ORDER BY SOLD DESC
         LIMIT 5',[$date]);
+        return view('admin.analysis',['items'=>$items]);
+    }
+
+    public function weekly_analysis(){
+        $date1 = date('Y-m-d',strtotime('-7days'));
+        $date2 = date("Y-m-d");
+        $items = DB::select('SELECT Item_Name,SUM(Quantity) as SOLD
+        FROM orders
+        WHERE DATE(created_at) Between ? and ?
+        GROUP BY Item_Name
+        ORDER BY SOLD DESC
+        LIMIT 5',[$date1,$date2]);
+        return view('admin.analysis',['items'=>$items]);
+    }
+
+    public function monthly_analysis(){
+        $month = date("m");
+        $items = DB::select('SELECT Item_Name,SUM(Quantity) as SOLD
+        FROM orders
+        WHERE MONTH(created_at) = ?
+        GROUP BY Item_Name
+        ORDER BY SOLD DESC
+        LIMIT 5',[$month]);
+        return view('admin.analysis',['items'=>$items]);
+    }
+
+    public function total_analysis(){
+        //$date = date("Y-m-d");
+        $items = DB::select('SELECT Item_Name,SUM(Quantity) as SOLD
+        FROM orders
+        GROUP BY Item_Name
+        ORDER BY SOLD DESC
+        LIMIT 5');
         return view('admin.analysis',['items'=>$items]);
     }
 

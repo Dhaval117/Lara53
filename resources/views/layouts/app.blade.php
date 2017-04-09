@@ -56,9 +56,30 @@
                             <li><a href="{{ url('/register') }}">Register</a></li>
                         @else
                          <!--   <li><a href="{{ url('/base') }}">Base</a></li>  -->
-                            <li><a href="{{ url('/analysis') }}">Report</a></li>
                             <li><a href="{{ url('/bill') }}">Generate Bill</a></li>
                             
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                Chart <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="{{ url('/today-analysis') }}">
+                                            Todays' Report
+                                        </a>
+                                        <a href="{{ url('/weekly-analysis') }}">
+                                            Weekly Report
+                                        </a>
+                                        <a href="{{ url('/monthly-analysis') }}">
+                                            Monthly Report
+                                        </a>
+                                        <a href="{{ url('/total-analysis') }}">
+                                            Total Report
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                 Orders <span class="caret"></span>
