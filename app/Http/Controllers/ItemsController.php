@@ -56,6 +56,11 @@ class ItemsController extends Controller
 
     public function edit(Request $request,$id) 
     { 
+      if($request->msg == 'availability'){
+        DB::update('update items set Availability = ? where Item_ID = ?',[$request->qty,$request->id]);
+        $data = array('id'=>$request->id,'quantity'=>$request->qty);
+        echo json_encode($data);
+      }
   		$name = $request->input('item_name');             //item_name is name of input field in form
   		$price = $request->input('item_price');
 	  	$ingredients = $request->input('item_ingredients');

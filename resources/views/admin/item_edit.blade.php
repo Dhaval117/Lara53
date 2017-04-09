@@ -5,6 +5,7 @@ Items | Update
 @endsection
  
 @section('content')
+{{csrf_field()}}
 <div class="table-responsive">
 <table class="table table-striped"> 
 <thead>
@@ -27,7 +28,7 @@ Items | Update
   <td>{{ $item->Item_Price }}</td>
   <td>{{ $item->Item_Ingredients }}</td>
   <td>{{ $item->Item_Description }}</td>
-  <td>{{ $item->Availability }}</td>
+  <td><input type="number" class="availability" id="item{{$item->Item_ID}}" style="width:60px" value="{{ $item->Availability }}" pattern="[0-9]+" data-id="{{$item->Item_ID}}"/></td>
   <td>{{ $item->Category }}</td>
   <td><a href='edit/{{ $item->Item_ID }}'>Edit</a></td> 
  </tr> 
@@ -35,4 +36,5 @@ Items | Update
 </tbody>
 </table>
 </div> 
+</script>
 @endsection
