@@ -5,6 +5,7 @@ View Orders
 @endsection
  
 @section('content')
+<?php use App\Code; ?>
 <div class="table-responsive">
 <table class="table table-striped"> 
 <thead>
@@ -14,7 +15,8 @@ View Orders
  <th>Price</th>
  <th>Quantity</th>
  <th>Date & Time</th>
-</tr> 
+ <th>Status</th>
+</tr>
 </thead>
 <tbody>
 @foreach ($orders as $order) 
@@ -24,6 +26,16 @@ View Orders
   <td>{{ $order->Item_Price }}</td>
   <td>{{ $order->Quantity }}</td>
   <td>{{ $order->created_at }}</td>
+  <td>
+  	<?php 
+  	 $a = Code::whereCode($order->Order_ID)->get();
+  	 if($a == '[]'){
+  	 	echo 'Paid';
+  	 }else{
+  	 	echo 'UnPaid';
+  	 }
+  	?>
+  </td>
  </tr> 
 @endforeach
 </tbody> 
